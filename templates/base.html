@@ -15,6 +15,7 @@
     {% block corecss %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -40,6 +41,22 @@
 </head>
 
 <body>
+
+    <header>
+        <nav>
+            <ul>
+                <img class="flag" src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/flag.PNG" alt="Italian Flag"/>
+                <li class="logo"><a href="{% url 'home'%}"><img
+                            src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/taste.PNG"" alt=" Logo" /></a>
+                </li>
+                <li class="leftnav"><a href="https://jen4web.substack.com/about">Home</a></li>
+                <li class="leftnav"><a href="https://jen4web.substack.com/archive">Menu</a></li>
+                <li class="rightnav"><a href="https://jen4web.substack.com/welcome">Contact Us</a></li>
+                <li class="rightnav"><a href="https://jen4web.substack.com/account">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+
 
     {% block page_header %}
     {% endblock %}

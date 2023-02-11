@@ -1,0 +1,29 @@
+/* Navbar */
+ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #000;
+}
+
+.flag{
+    width: 300px;
+    height: 100px;
+    position: relative;
+    right: 550px;
+}
+
+.leftnav {
+    order: 1;
+}
+
+.logo {
+    order: 2
+}
+
+.rightnav {
+    order: 3;
+}
