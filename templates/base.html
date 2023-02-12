@@ -42,18 +42,33 @@
 
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <img class="flag" src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/flag.PNG" alt="Italian Flag"/>
-                <li class="logo"><a href="{% url 'home'%}"><img
-                            src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/taste.PNG"" alt=" Logo" /></a>
-                </li>
-                <li class="leftnav"><a href="https://jen4web.substack.com/about">Home</a></li>
-                <li class="leftnav"><a href="https://jen4web.substack.com/archive">Menu</a></li>
-                <li class="rightnav"><a href="https://jen4web.substack.com/welcome">Contact Us</a></li>
-                <li class="rightnav"><a href="https://jen4web.substack.com/account">Log in</a></li>
-            </ul>
+    <header class="fixed-top bg-black">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="{% url 'home'%}"><img
+                        src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/taste.PNG"" alt=" Logo"
+                        width="300px" height="125px" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse header-font align float-right" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item rightnav">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item rightnav">
+                            <a class="nav-link">Log in</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -66,6 +81,11 @@
 
     {% block postloadjs %}
     {% endblock %}
+
+
+    <footer>
+
+    </footer>
 </body>
 
 </html>
