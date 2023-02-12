@@ -15,8 +15,9 @@ ul {
     background-color: #000;
 }
 
-.navbar-expand-lg .navbar-collapse {
-    flex-basis: 0;
+.navbar-brand{
+    border-right: 5px solid #fff;
+
 }
 
 .header-font {
@@ -39,4 +40,8 @@ ul {
 
 .bg-black {
     background: #000;
+}
+
+.carousel-height{
+    height: 50rem;
 }
