@@ -12379,12 +12379,14 @@ header.masthead {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    height: 57.91rem;
 }
 
 .overlay {
     background-color: #000000a1;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+    margin-top: 4rem;
 }
 
 header.masthead .masthead-subheading {
@@ -12730,21 +12732,26 @@ header.masthead .masthead-heading {
     }
 }
 
-.team-member {
+.home-page-food {
     margin-bottom: 3rem;
     text-align: center;
 }
 
-.team-member img {
+.home-page-food img {
     width: 14rem;
     height: 14rem;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px #000, 0 0 5px #000;
 }
 
-.team-member h4,
-.team-member .h4 {
+.home-page-food h4,
+.home-page-food .h4 {
     margin-top: 1.5rem;
     margin-bottom: 0;
+}
+
+.order-btn{
+    text-shadow: 0 0 3px #000, 0 0 5px #000;
 }
 
 .img-brand {
