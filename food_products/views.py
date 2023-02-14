@@ -13,4 +13,4 @@ def food_menu(request):
         'food_products': food_products,
     }
 
-    return render(request, 'menu/menu.html')
+    return render(request, 'menu/menu.html', context)
