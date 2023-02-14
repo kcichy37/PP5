@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'storages',
-    'food_products'
+    'menu'
 ]
 
 MIDDLEWARE = [

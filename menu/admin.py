@@ -3,7 +3,7 @@ from .models import FoodProduct, FoodCategory
 
 
 # Register your models here.
-class ProductAdmin(admin.ModelAdmin):
+class FoodProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'category',
@@ -15,7 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ('category',)
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class FoodCategoryAdmin(admin.ModelAdmin):
     list_display = (
         'pk',
         'friendly_name',
@@ -23,5 +23,5 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(FoodProduct, ProductAdmin)
-admin.site.register(FoodCategory, CategoryAdmin)
+admin.site.register(FoodProduct, FoodProductAdmin)
+admin.site.register(FoodCategory, FoodCategoryAdmin)
