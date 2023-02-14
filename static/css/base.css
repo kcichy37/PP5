@@ -64,6 +64,65 @@ root {
     }
 }
 
+/* CSS for menu template */
+.menu-overlay {
+    background: #00000070;
+    width: 70%;
+    height: 8rem;
+    color: white;
+    align-content: center;
+}
+
+.menu-container {
+    height: 8rem;
+    margin-bottom: 2.5rem;
+}
+
+.starter-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/garlic_bread_starter_img.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.salads-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/salad_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.pizza-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pizza_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.pasta-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pasta_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.risotto-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/risotto_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.meat-fish-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/meat_fish_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.sides-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fries_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
+.desserts-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/desserts_bg.jpg) no-repeat center;
+    background-size: 70% 150%;
+}
+
+.soft-drinks-bg {
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/soft_drinks_bg.jpg) no-repeat center;
+    background-size: 70% 230%;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
@@ -12325,7 +12384,7 @@ p {
 }
 
 @media (min-width: 992px) {
-    #mainNav{
+    #mainNav {
         padding-bottom: 0px;
         padding-top: 0px;
         border: none;
@@ -12748,7 +12807,7 @@ header.masthead .masthead-heading {
     margin-bottom: 0;
 }
 
-.order-btn{
+.order-btn {
     text-shadow: 0 0 3px #000, 0 0 5px #000;
 }
 
