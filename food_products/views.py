@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import FoodProduct
+from .models import FoodProduct, FoodCategory
 # Create your views here.
 
 
@@ -7,10 +7,10 @@ def food_menu(request):
     """
     A view to show the food products
     """
-    food_products = FoodProduct.objects.all()
+    starters = FoodProduct.objects.filter(category='1')
 
     context = {
-        'food_products': food_products,
+        'starters': starters,
     }
 
     return render(request, 'menu/menu.html', context)

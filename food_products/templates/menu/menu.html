@@ -10,6 +10,9 @@
         </div>
     </div>
 
+
+
+
     <div class="menu-container starter-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
@@ -17,6 +20,27 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+
+                {{starters.name}}
+
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        {% for starters in starters %}
+        <img class="card-img-top" src="{{starters.image_url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        {% endfor %}
+        </div>
+    </div>
+
 
     <div class="menu-container salads-bg d-flex justify-content-center">
         <div class="row menu-overlay">
