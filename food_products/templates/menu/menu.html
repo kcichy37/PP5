@@ -10,6 +10,21 @@
         </div>
     </div>
 
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#soft-drinks">Starters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#salads">Salads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pizza">Pizza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pasta">pasta</a>
+        </li>
+      </ul>
+
     <div class="menu-container starter-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
@@ -17,10 +32,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="starters">
         <div class="row">
             {% for starters in starters %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{starters.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -43,10 +58,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="salads">
         <div class="row">
             {% for salads in salads %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{salads.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -67,10 +82,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="pizza">
         <div class="row">
             {% for pizza in pizza %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{pizza.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -91,10 +106,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="pasta">
         <div class="row">
             {% for pasta in pasta %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{pasta.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -115,10 +130,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="risotto">
         <div class="row">
             {% for risotto in risotto %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{risotto.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -139,10 +154,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="meat-fish">
         <div class="row">
             {% for meat_fish in meat_fish %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{meat_fish.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -163,10 +178,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="sides">
         <div class="row">
             {% for sides in sides %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{sides.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -187,10 +202,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="desserts">
         <div class="row">
             {% for desserts in desserts %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{desserts.image_url}}" alt="Card image cap">
                     <div class="card-body">
@@ -211,10 +226,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="soft-drinks">
         <div class="row">
             {% for soft_drinks in soft_drinks %}
-            <div class="col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{soft_drinks.image_url}}" alt="Card image cap">
                     <div class="card-body">

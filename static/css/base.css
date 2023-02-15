@@ -125,17 +125,35 @@ root {
 
 
 /* Menu cards */
-.card-img-top{
+.card-img-top {
     width: 286px;
     height: 286px;
 }
 
-.card-body{
+.card-body {
     max-height: 10rem;
+    overflow: hidden;
 }
 
-.card{
+.card {
     margin-bottom: 4rem;
+}
+
+.card-description {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+#starters,
+#salads,
+#pizza,
+#pasta,
+#risotto,
+#meat-fish,
+#sides,
+#desserts,
+#soft-drinks {
+    scroll-margin-top: 7rem;
 }
 
 body {
