@@ -10,9 +10,6 @@
         </div>
     </div>
 
-
-
-
     <div class="menu-container starter-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
@@ -20,26 +17,23 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col">
-
-                {{starters.name}}
-
+            {% for starters in starters %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{starters.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{starters.name}}</h5>
+                        <p class="card-text">{{starters.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        {% for starters in starters %}
-        <img class="card-img-top" src="{{starters.image_url}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        {% endfor %}
-        </div>
-    </div>
+
 
 
     <div class="menu-container salads-bg d-flex justify-content-center">
@@ -47,6 +41,22 @@
             <div class="col">
                 <h2>Salads</h2>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for salads in salads %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{salads.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{salads.name}}</h5>
+                        <p class="card-text">{{salads.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -57,12 +67,44 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            {% for pizza in pizza %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{pizza.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pizza.name}}</h5>
+                        <p class="card-text">{{pizza.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <div class="menu-container pasta-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
                 <h2>Pasta</h2>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for pasta in pasta %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{pasta.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pasta.name}}</h5>
+                        <p class="card-text">{{pasta.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -73,12 +115,44 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            {% for risotto in risotto %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{risotto.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{risotto.name}}</h5>
+                        <p class="card-text">{{risotto.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <div class="menu-container meat-fish-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
                 <h2>Meat & Fish</h2>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for meat_fish in meat_fish %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{meat_fish.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{meat_fish.name}}</h5>
+                        <p class="card-text">{{meat_fish.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -89,6 +163,22 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            {% for sides in sides %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{sides.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{sides.name}}</h5>
+                        <p class="card-text">{{sides.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <div class="menu-container desserts-bg d-flex justify-content-center">
         <div class="row menu-overlay">
@@ -97,12 +187,44 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            {% for desserts in desserts %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{desserts.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{desserts.name}}</h5>
+                        <p class="card-text">{{desserts.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <div class="menu-container soft-drinks-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
                 <h2>Soft Drinks</h2>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for soft_drinks in soft_drinks %}
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{soft_drinks.image_url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{soft_drinks.name}}</h5>
+                        <p class="card-text">{{soft_drinks.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

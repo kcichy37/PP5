@@ -123,6 +123,21 @@ root {
     background-size: 70% 230%;
 }
 
+
+/* Menu cards */
+.card-img-top{
+    width: 286px;
+    height: 286px;
+}
+
+.card-body{
+    max-height: 10rem;
+}
+
+.card{
+    margin-bottom: 4rem;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
