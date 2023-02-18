@@ -125,11 +125,31 @@
                                 <p class="card-text">{{pizza.description|truncatechars:75}}</p>
                                 {% if pizza.description|length > 75 %}
                                 <button type="button" class="read-more btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
+                                    data-bs-target="#exampleModal{{pizza.id}}" data-id="{{pizza.id}}">
                                     read more
                                 </button>
                                 {% endif %}
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal{{pizza.id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{pizza.id}}"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{pizza.id}}">{{pizza.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{pizza.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -277,35 +297,4 @@
     </div>
 </div>
 
-<!-- Modal -->
-{% for product in product %}
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">{{product.name}}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                {{product.description}}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
 {% endblock%}
-
-{% block extra_js %}
-<script type="text/javascript">
-    const readMorebuttons = document.querySelectorAll('.read-more');
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-        });
-    });
-</script>
-{% endblock %}

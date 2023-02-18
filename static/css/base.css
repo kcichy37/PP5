@@ -155,14 +155,18 @@ root {
     text-decoration: underline;
 }
 
-.card-text{
+.card-text {
     font-size: 0.8rem;
     margin-top: -0.4rem;
 }
 
-.card-img{
+.card-img {
     height: 150px;
     width: 200px;
+}
+
+.modal-content {
+    top: 250px;
 }
 
 #starters,
