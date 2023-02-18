@@ -62,8 +62,31 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{starters.name}}</h5>
-                                <p class="card-text">{{starters.description}}</p>
+                                <p class="card-text">
+                                    {{starters.description|truncatechars:75}}{% if starters.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{starters.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{starters.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{starters.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{starters.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{starters.id}}">{{starters.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{starters.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -93,8 +116,32 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{salads.name}}</h5>
-                                <p class="card-text">{{salads.description}}</p>
+                                <p class="card-text">
+                                    {{salads.description|truncatechars:75}}{% if salads.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{salads.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{salads.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal{{salads.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{salads.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{salads.id}}">{{salads.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{salads.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -103,6 +150,10 @@
         </div>
     </div>
 
+
+
+
+    <!-- Pizza -->
     <div class="menu-container pizza-bg d-flex justify-content-center">
         <div class="row menu-overlay">
             <div class="col">
@@ -122,23 +173,23 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{pizza.name}}</h5>
-                                <p class="card-text">{{pizza.description|truncatechars:75}}</p>
-                                {% if pizza.description|length > 75 %}
-                                <button type="button" class="read-more btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal{{pizza.id}}" data-id="{{pizza.id}}">
-                                    read more
-                                </button>
-                                {% endif %}
+                                <p class="card-text">
+                                    {{pizza.description|truncatechars:75}}{% if pizza.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{pizza.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{pizza.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal{{pizza.id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{pizza.id}}"
-                aria-hidden="true">
+            <div class="modal fade" id="exampleModal{{pizza.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{pizza.id}}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -168,12 +219,41 @@
     <div class="container" id="pasta">
         <div class="row">
             {% for pasta in pasta %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{pasta.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{pasta.name}}</h5>
-                        <p class="card-text">{{pasta.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{pasta.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{pasta.name}}</h5>
+                                <p class="card-text">
+                                    {{pasta.description|truncatechars:75}}{% if pasta.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{pasta.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{pasta.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{pasta.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{pasta.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{pasta.id}}">{{pasta.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{pasta.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,12 +271,41 @@
     <div class="container" id="risotto">
         <div class="row">
             {% for risotto in risotto %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{risotto.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{risotto.name}}</h5>
-                        <p class="card-text">{{risotto.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{risotto.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{risotto.name}}</h5>
+                                <p class="card-text">
+                                    {{risotto.description|truncatechars:75}}{% if risotto.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{risotto.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{risotto.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{risotto.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{risotto.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{risotto.id}}">{{risotto.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{risotto.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,12 +323,41 @@
     <div class="container" id="meat-fish">
         <div class="row">
             {% for meat_fish in meat_fish %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{meat_fish.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{meat_fish.name}}</h5>
-                        <p class="card-text">{{meat_fish.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{meat_fish.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{meat_fish.name}}</h5>
+                                <p class="card-text">
+                                    {{meat_fish.description|truncatechars:75}}{% if meat_fish.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{meat_fish.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{meat_fish.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{meat_fish.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{meat_fish.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{meat_fish.id}}">{{meat_fish.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{meat_fish.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -237,12 +375,18 @@
     <div class="container" id="sides">
         <div class="row">
             {% for sides in sides %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{sides.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{sides.name}}</h5>
-                        <p class="card-text">{{sides.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{sides.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{sides.name}}</h5>
+                                <p class="card-text">{{sides.description}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,12 +404,42 @@
     <div class="container" id="desserts">
         <div class="row">
             {% for desserts in desserts %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{desserts.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{desserts.name}}</h5>
-                        <p class="card-text">{{desserts.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{desserts.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{desserts.name}}</h5>
+                                <p class="card-text">
+                                    {{desserts.description|truncatechars:75}}{% if desserts.description|length > 75 %}
+                                    <span class="text-muted"><a href="#exampleModal{{desserts.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{desserts.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                                <p>{{desserts.calories}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{desserts.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{desserts.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{desserts.id}}">{{desserts.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{desserts.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,12 +457,19 @@
     <div class="container" id="soft-drinks">
         <div class="row">
             {% for soft_drinks in soft_drinks %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{soft_drinks.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{soft_drinks.name}}</h5>
-                        <p class="card-text">{{soft_drinks.description}}</p>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{soft_drinks.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{soft_drinks.name}}</h5>
+                                <p class="card-text">{{soft_drinks.description}}</p>
+                                <p><span class="text-muted">{{soft_drinks.calories}}</span> <span class="text-muted">{{soft_drinks.price}}</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

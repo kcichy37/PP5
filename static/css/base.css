@@ -178,7 +178,8 @@ root {
 #sides,
 #desserts,
 #soft-drinks {
-    scroll-margin-top: 7rem;
+    scroll-margin-top: 9rem;
+    margin-bottom: 10rem;
 }
 
 body {

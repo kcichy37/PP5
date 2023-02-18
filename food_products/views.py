@@ -7,8 +7,6 @@ def food_menu(request):
     """
     A view to show the food products
     """
-    product = FoodProduct.objects.all()
-
     starters = FoodProduct.objects.filter(category='1')
     salads = FoodProduct.objects.filter(category='2')
     pizza = FoodProduct.objects.filter(category='3')
@@ -18,6 +16,14 @@ def food_menu(request):
     sides = FoodProduct.objects.filter(category='8')
     desserts = FoodProduct.objects.filter(category='9')
     soft_drinks = FoodProduct.objects.filter(category='10')
+
+    categories = FoodCategory.objects.all()
+    category_name = request.GET.get('category')
+    if category_name:
+        category = FoodCategory.objects.get(name=category_name)
+        products = FoodProduct.objects.filter(category=category)
+    else:
+        products = FoodProduct.objects.all()
 
     context = {
         'starters': starters,
@@ -29,7 +35,8 @@ def food_menu(request):
         'sides': sides,
         'desserts': desserts,
         'soft_drinks': soft_drinks,
-        'product': product,
+        'categories': categories,
+        'products': products
     }
 
     return render(request, 'menu/menu.html', context)
