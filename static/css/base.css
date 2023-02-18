@@ -78,6 +78,11 @@ root {
     margin-bottom: 2.5rem;
 }
 
+.menu-nav {
+    background-color: #000;
+    margin-bottom: 2rem;
+}
+
 .starter-bg {
     background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/garlic_bread_starter_img.jpg) no-repeat center;
     background-size: 70% 230%;
@@ -142,6 +147,22 @@ root {
 .card-description {
     max-height: 100px;
     overflow: hidden;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-top: -0.7rem;
+    text-decoration: underline;
+}
+
+.card-text{
+    font-size: 0.8rem;
+    margin-top: -0.4rem;
+}
+
+.card-img{
+    height: 150px;
+    width: 200px;
 }
 
 #starters,

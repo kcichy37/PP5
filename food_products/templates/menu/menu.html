@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content%}
+
 <div class="page-section container-fluid text-center">
     <div class="row">
         <div class="col">
@@ -10,20 +11,37 @@
         </div>
     </div>
 
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#soft-drinks">Starters</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#salads">Salads</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#pizza">Pizza</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#pasta">pasta</a>
-        </li>
-      </ul>
+    <div class="container sticky-top menu-nav">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#starters">Starters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#salads">Salads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pizza">Pizza</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pasta">Pasta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#risotto">Risotto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#meat-fish">Meat & Fish</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#sides">Sides</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#desserts">Desserts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#soft-drinks">Soft Drinks</a>
+            </li>
+        </ul>
+    </div>
 
     <div class="menu-container starter-bg d-flex justify-content-center">
         <div class="row menu-overlay">
@@ -35,13 +53,18 @@
     <div class="container" id="starters">
         <div class="row">
             {% for starters in starters %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{starters.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{starters.name}}</h5>
-                        <p class="card-text">{{starters.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{starters.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{starters.name}}</h5>
+                                <p class="card-text">{{starters.description}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,13 +84,18 @@
     <div class="container" id="salads">
         <div class="row">
             {% for salads in salads %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{salads.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{salads.name}}</h5>
-                        <p class="card-text">{{salads.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{salads.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{salads.name}}</h5>
+                                <p class="card-text">{{salads.description}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,13 +113,24 @@
     <div class="container" id="pizza">
         <div class="row">
             {% for pizza in pizza %}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{pizza.image_url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{pizza.name}}</h5>
-                        <p class="card-text">{{pizza.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{pizza.image_url}}" class="card-img rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{pizza.name}}</h5>
+                                <p class="card-text">{{pizza.description|truncatechars:75}}</p>
+                                {% if pizza.description|length > 75 %}
+                                <button type="button" class="read-more btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    read more
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,7 +154,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{pasta.name}}</h5>
                         <p class="card-text">{{pasta.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -139,7 +177,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{risotto.name}}</h5>
                         <p class="card-text">{{risotto.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -163,7 +200,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{meat_fish.name}}</h5>
                         <p class="card-text">{{meat_fish.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -187,7 +223,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{sides.name}}</h5>
                         <p class="card-text">{{sides.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -211,7 +246,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{desserts.name}}</h5>
                         <p class="card-text">{{desserts.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +269,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{soft_drinks.name}}</h5>
                         <p class="card-text">{{soft_drinks.description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -244,6 +277,35 @@
     </div>
 </div>
 
-
+<!-- Modal -->
+{% for product in product %}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{product.name}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{product.description}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock%}
+
+{% block extra_js %}
+<script type="text/javascript">
+    const readMorebuttons = document.querySelectorAll('.read-more');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+    });
+</script>
+{% endblock %}
