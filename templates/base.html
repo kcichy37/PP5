@@ -70,16 +70,28 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'menu' %}">Takeout Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'view_bag' %}"><i
-                                    class="fas fa-shopping-bag"></i></a></li>
+                        <li class="nav-item"><a
+                                class="{% if grand_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                href="{% url 'view_bag' %}">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-sm"></i></div>
+                                    <small class="my-0 font-sm">
+                                        {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        $0.00
+                                        {% endif %}
+                                    </small>
+                                </div>
+                            </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="my-1 section-subheading">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
-            </div>            
+                <h4 class="my-1 section-subheading">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
+            </div>
         </div>
     </header>
 
