@@ -188,6 +188,10 @@ root {
     box-shadow: 1.5px 1.5px 5px;
 }
 
+.bag-img{
+    height: 7rem !important;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
