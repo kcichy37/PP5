@@ -180,7 +180,7 @@ root {
     margin-bottom: 10rem;
 }
 
-.bag{
+.menu-bag{
     border: 5px groove #000;
     min-height: 20rem;
     width: 35rem;
@@ -190,6 +190,12 @@ root {
 
 .bag-img{
     height: 7rem !important;
+    width: 7rem;
+}
+
+.bag-img-menu{
+    height: 4rem !important;
+    width: 4rem;
 }
 
 body {
