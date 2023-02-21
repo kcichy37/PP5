@@ -11,24 +11,16 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """
-    Add product to the bag
-    """
-    if request.method == 'POST':
-        quantity = int(request.POST.get('quantity'))
-        bag = request.session.get('bag', {})
-        redirect_url = request.POST.get('redirect_url')
+    """ Add a quantity of the specified product to the shopping bag """
 
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
-        else:
-            bag[item_id] = quantity
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    bag = request.session.get('bag', {})
 
-        request.session['bag'] = bag
+    if item_id in list(bag.keys()):
+        bag[item_id] += quantity
+    else:
+        bag[item_id] = quantity
 
-        # Create a JSON response that includes the updated bag data
-        response_data = {
-            'success': True,
-            'bag': bag
-        }
-        return JsonResponse(response_data)
+    request.session['bag'] = bag
+    return redirect(redirect_url)
