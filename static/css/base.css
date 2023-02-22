@@ -167,7 +167,7 @@ root {
     width: 200px;
 }
 
-.card-footer{
+.card-footer {
     padding: 0px;
 }
 
@@ -180,20 +180,21 @@ root {
     margin-bottom: 10rem;
 }
 
-.menu-bag{
+.menu-bag {
     border: 5px groove #000;
-    min-height: 20rem;
+    height: 20rem;
     width: 35rem;
     z-index: -1 !important;
     box-shadow: 1.5px 1.5px 5px;
+    overflow-y: scroll;
 }
 
-.bag-img{
+.bag-img {
     height: 7rem !important;
     width: 7rem;
 }
 
-.bag-img-menu{
+.bag-img-menu {
     height: 4rem !important;
     width: 4rem;
 }
@@ -212,16 +213,24 @@ body {
 }
 
 .update-link,
-.remove-item{
+.remove-item {
     cursor: pointer;
 }
 
-.update-link{
+.update-link {
     float: right;
 }
 
-.remove-item{
+.remove-item {
     float: left;
+}
+
+.toast-body {
+    opacity: 1 !important;
+}
+
+.toast-capper {
+    height: 5px;
 }
 
 
@@ -404,7 +413,6 @@ sup {
 
 a {
     color: #ffc800;
-    text-decoration: underline;
 }
 
 a:hover {
