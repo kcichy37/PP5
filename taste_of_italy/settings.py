@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'food_products',
     'django_filters',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
