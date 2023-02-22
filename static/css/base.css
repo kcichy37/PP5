@@ -216,6 +216,14 @@ body {
     cursor: pointer;
 }
 
+.update-link{
+    float: right;
+}
+
+.remove-item{
+    float: left;
+}
+
 
 hr {
     margin: 1rem 0;
