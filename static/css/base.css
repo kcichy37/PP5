@@ -182,11 +182,15 @@ root {
 
 .menu-bag {
     border: 5px groove #000;
-    height: 20rem;
+    min-height: 20rem;
     width: 35rem;
     z-index: -1 !important;
     box-shadow: 1.5px 1.5px 5px;
-    overflow-y: scroll;
+}
+
+.menu-box{
+    height: 100px;
+    overflow-y: auto;
 }
 
 .bag-img {
