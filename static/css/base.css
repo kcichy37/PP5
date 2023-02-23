@@ -83,7 +83,7 @@ body{
 }
 
 .menu-nav {
-    background-color: #000;
+    background-color: #ffc107;
     margin-bottom: 2rem;
 }
 
@@ -185,7 +185,7 @@ body{
 }
 
 .menu-bag {
-    border: 5px groove #000;
+    border: 2.5px solid #000;
     min-height: 20rem;
     width: 35rem;
     z-index: -1 !important;
@@ -252,6 +252,10 @@ hr {
 
 hr:not([size]) {
     height: 1px;
+}
+
+.del-banner{
+    background-color: #ffc107;
 }
 
 h6,
@@ -4648,7 +4652,7 @@ fieldset:disabled .btn {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #ffc800;
+    color: #212529;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
