@@ -64,6 +64,10 @@ root {
     }
 }
 
+body{
+    background-color: #ffffff !important;
+}
+
 /* CSS for menu template */
 .menu-overlay {
     background: #00000070;
@@ -416,11 +420,11 @@ sup {
 }
 
 a {
-    color: #ffc800;
+    color: #cca000;
 }
 
 a:hover {
-    color: #cca000;
+    color: #ffc800;
 }
 
 a:not([href]):not([class]),
