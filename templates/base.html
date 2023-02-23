@@ -71,16 +71,36 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'menu' %}">Takeout Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'menu' %}">Takeout Menu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-sm"></i></div>
+                                    <p class="fs-6">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
                         <li class="nav-item"><a
                                 class="{% if grand_total %}text-warning font-weight-bold{% else %}text-white{% endif %} nav-link"
                                 href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-sm"></i></div>
-                                    <small class="my-0 font-sm">
+                                    <small class="fs-6">
                                         {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                         {% else %}
