@@ -8,7 +8,7 @@ class Enquiry(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     subject = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()
-    image = models.ImageField(null=False, blank=False)
+    image = models.ImageField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     resolved = models.BooleanField(default=False)
 

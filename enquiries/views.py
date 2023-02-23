@@ -10,8 +10,8 @@ def enquiry(request):
         if form.is_valid():
             enquiry = form.save()
             send_mail(
-                f"New enquiry from {enquiry.full_name} at {enquiry.email}",
-                f"{enquiry.subject}\n\n{enquiry.description}",
+                f"{enquiry.subject}",
+                f"Name:{enquiry.full_name}\nE-mail:{enquiry.email}\n\n{enquiry.description}\n\nCreated on:{enquiry.created_on}",
 
                 "noreply@tasteofitaly.com",
                 ["tasteofitalyproject@gmail.com"],
@@ -21,8 +21,8 @@ def enquiry(request):
     else:
         form = EnquiryForm()
 
-    return render(request, 'enquiry.html', {'form': form})
+    return render(request, 'enquiries/enquiry.html', {'form': form})
 
 
 def enquiry_success(request):
-    return render(request, 'enquiry_success.html')
+    return render(request, 'enquiries/enquiry_success.html')
