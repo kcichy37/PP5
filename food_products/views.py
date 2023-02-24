@@ -29,13 +29,41 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('add_product'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid')
+            messages.error(
+                request, 'Failed to add product. Please ensure the form is valid')
     else:
         form = ProductForm()
 
     template = 'menu/add_product.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """
+    Edit a product in the store
+    """
+    product = get_object_or_404(FoodProduct, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully edited {product.name}')
+            return redirect(reverse('menu'))
+        else:
+            messages.error(
+                request, f'Failed to update {product.name}. Please ensure the form is valid')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'menu/edit_product.html'
+    context = {
+        'form': form,
+        'product': product
     }
 
     return render(request, template, context)
