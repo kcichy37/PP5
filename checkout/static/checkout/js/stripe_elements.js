@@ -51,12 +51,13 @@ form.addEventListener('submit', function (ev) {
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-    }
+    };
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
@@ -70,6 +71,7 @@ form.addEventListener('submit', function (ev) {
                     address: {
                         line1: $.trim(form.street_address1.value),
                         line2: $.trim(form.street_address2.value),
+                        postal_code: $.trim(form.postcode.value),
                     }
                 }
             },
@@ -79,8 +81,9 @@ form.addEventListener('submit', function (ev) {
                 address: {
                     line1: $.trim(form.street_address1.value),
                     line2: $.trim(form.street_address2.value),
+                    postal_code: $.trim(form.postcode.value),
                 }
-            }
+            },
         }).then(function (result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
@@ -103,6 +106,7 @@ form.addEventListener('submit', function (ev) {
             }
         });
     }).fail(function () {
+        // just reload the page, the error will be in django messages
         location.reload();
     })
 });
