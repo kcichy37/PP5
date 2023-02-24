@@ -67,7 +67,6 @@ class StripeWH_Handler:
                     postcode__iexact=shipping_details.address.postal_code,
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
-                    grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
