@@ -1,0 +1,557 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="section-heading text-uppercase">Product Managment</h2>
+            <h3 class="section-subheading text-muted">All Products</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container mb-2 text-center">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h5 class="section-subheading text-muted">Starters</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="container click-jump" id="starters">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'starters' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.name}}</h5>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a></span>
+                                        {% endif %}</p>
+                                    {% if request.user.is_superuser %}
+                                    <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mb-2 text-center">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h5 class="section-subheading text-muted">Salads</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="container click-jump" id="starters">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'salads' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.name}}</h5>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a></span>
+                                        {% endif %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Pizza</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'pizza' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Pasta</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'pasta' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Risotto</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'risotto' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Meat & Fish</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'meat_fish' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Sides</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'sides' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Desserts</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'desserts' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                    <span class="text-muted"><a href="#exampleModal{{product.id}}" class="read-more"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                            read more
+                                        </a></span>
+                                    {% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{product.description}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h5 class="section-subheading text-muted">Soft Drinks</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="container click-jump" id="starters">
+        <div class="row">
+            {% for product in products %}
+            {% if product.category.name == 'soft_drinks' %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

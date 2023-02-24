@@ -60,9 +60,11 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     {% if product.image %}
-                                    <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                    <img src="{{product.image.url}}" class="card-img rounded-start"
+                                        alt="{{product.name}}">
                                     {% else %}
-                                    <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{product.name}}">
+                                    <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                        alt="{{product.name}}">
                                     {% endif %}
                                 </div>
                                 <div class="col-md-8">
@@ -103,10 +105,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="submit"
+                                            <button type="submit"
                                                 class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                                value="Add">
-                                            </input>
+                                                value="Add">Add</button>
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </form>
                                     </div>
@@ -606,24 +607,24 @@
                                             <th scope="col">Subtotal</th>
                                         </tr>
                                     </thead>
-                                        {% for item in bag_items %}
-                                        <tr>
-                                            <td class="p-3 w-25">
-                                                <img class="img-fluid rounded bag-img-menu"
-                                                    src="{{ item.product.image.url }}" </td>
-                                            <td class="py-3">
-                                                <p class="my-0"><strong>{{item.product.name}}</strong></p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">£{{item.product.price}}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{item.quantity}}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{item.product.price}}</p>
-                                            </td>
-                                        </tr>
+                                    {% for item in bag_items %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                            <img class="img-fluid rounded bag-img-menu"
+                                                src="{{ item.product.image.url }}" </td>
+                                        <td class="py-3">
+                                            <p class="my-0"><strong>{{item.product.name}}</strong></p>
+                                        </td>
+                                        <td class="py-3">
+                                            <p class="my-0">£{{item.product.price}}</p>
+                                        </td>
+                                        <td class="py-3">
+                                            <p class="my-0">{{item.quantity}}</p>
+                                        </td>
+                                        <td class="py-3">
+                                            <p class="my-0">{{item.product.price}}</p>
+                                        </td>
+                                    </tr>
                                     {% endfor %}
                                     <tr>
                                         <td class="pt-5 text-end" colspan="5">

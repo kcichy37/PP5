@@ -18,6 +18,19 @@ def food_menu(request):
     return render(request, 'menu/menu.html', context)
 
 
+def all_products(request):
+    """
+    A view to show all the products for edit and delete
+    """
+    products = FoodProduct.objects.all()
+
+    context = {
+        'products': products
+    }
+
+    return render(request, 'menu/all_products.html', context)
+
+
 def add_product(request):
     """
     Add a product to the store
@@ -27,7 +40,7 @@ def add_product(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('menu'))
         else:
             messages.error(
                 request, 'Failed to add product. Please ensure the form is valid')
@@ -52,7 +65,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, f'Successfully edited {product.name}')
-            return redirect(reverse('menu'))
+            return redirect(reverse('all_products'))
         else:
             messages.error(
                 request, f'Failed to update {product.name}. Please ensure the form is valid')
@@ -67,3 +80,14 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+
+    """
+    Delete a product
+    """
+    product = get_object_or_404(FoodProduct, pk=product_id)
+    product.delete()
+    messages.success(request, f'Product {product.name} deleted successfully.')
+    return redirect(reverse('all_products'))
