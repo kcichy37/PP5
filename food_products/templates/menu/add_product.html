@@ -13,8 +13,8 @@
     </div>
 
     <div class="row w-50">
-        <div class="col>
-            <form method="POST" action="{% url 'add_product'%}" class="form text-center" enctype="multipart/form-data">
+        <div class="col">
+            <form method="POST" action="{% url 'add_product'%} " class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-end">
