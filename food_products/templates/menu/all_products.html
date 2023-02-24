@@ -114,6 +114,10 @@
                                                 read more
                                             </a></span>
                                         {% endif %}</p>
+                                    {% if request.user.is_superuser %}
+                                    <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -179,6 +183,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -241,6 +249,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -303,6 +315,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -365,6 +381,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -427,6 +447,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -489,6 +513,10 @@
                                             read more
                                         </a></span>
                                     {% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -544,6 +572,10 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{product.name}}</h5>
+                                {% if request.user.is_superuser %}
+                                <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
