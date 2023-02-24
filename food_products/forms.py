@@ -5,8 +5,8 @@ from .models import FoodProduct, FoodCategory
 class ProductForm(forms.ModelForm):
 
     class Meta:
-        model: FoodProduct
-        fields: '__all__'
+        model = FoodProduct
+        fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

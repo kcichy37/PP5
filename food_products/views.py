@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import FoodProduct, FoodCategory
+from .forms import ProductForm
 # Create your views here.
 
 
@@ -16,4 +17,14 @@ def food_menu(request):
     return render(request, 'menu/menu.html', context)
 
 
+def add_product(request):
+    """
+    Add a product to the store
+    """
+    form = ProductForm()
+    template = 'menu/add_product.html'
+    context = {
+        'form': form,
+    }
 
+    return render(request, template, context)
