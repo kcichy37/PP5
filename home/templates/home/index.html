@@ -58,6 +58,35 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Testimonials</h2>
             <h3 class="section-subheading text-muted">Our Customers reviews</h3>
+            <div id="reviews-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for review in reviews %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ review.user.username }}</h5>
+                                <p class="card-text"><strong>Rating: </strong>{{ review.rating }}/5</p>
+                                <p class="card-text">{{ review.comment }}</p>
+                                <p class="card-text">{{ review.created_at|date }}</p>
+                            </div>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviews-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviews-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>

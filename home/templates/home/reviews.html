@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="section-heading text-uppercase">Reviews</h2>
+            <h3 class="section-subheading text-muted">Leave a review</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row w-50">
+        <div class="col">
+            <form method="POST" action="{% url 'add_reviews'%} " class="form text-start">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-end">
+                    <a href="{% url 'menu' %}" class="btn">Cancel</a>
+                    <button class="btn" type="submit">Add review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h3 class="section-subheading text-muted">Your reviews</h3>
+            <hr>
+        </div>
+    </div>
+    {% for review in reviews %}
+    {% if request.user == review.user %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ review.user.username }}</h5>
+            <div class="star-rating" data-rating="{{ review.rating }}">
+                <!-- The stars will be added dynamically by the JS script -->
+            </div>
+            <p class="card-text">{{ review.comment }}</p>
+            <p class="card-text"><small>{{ review.created_at }}</small></p>
+            <a class="text-info" href="">Edit</a>
+            <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+</div>
+{% endblock %}
