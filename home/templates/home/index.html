@@ -7,10 +7,43 @@
     <div class="container overlay rounded">
         <div class="masthead-subheading">Welcome To</div>
         <div class="masthead-heading text-uppercase">Taste of Italy</div>
-        <p class="about-p">Since 1994, Taste of Italy has been serving the finest <strong>Italian cuisine</strong> from
-            the heart of London. Born out of an Italian families love of <strong>authentic Italian home
-                cooking</strong>, the restaurant has evolved to offer exquisite, freshly prepared dishes inspired by
-            <strong>traditional</strong> and <strong>modern</strong> Italy. </p>
+        <p class="about-p">Since 1994, <strong>Taste of Italy</strong> has been a beloved establishment in the heart of
+            London, serving up the finest and most <strong>authentic Italian cuisine</strong>. Our restaurant was born
+            out of a passion for
+            <strong>traditional Italian</strong> home cooking, and over the years, we have evolved to offer
+            a menu that is a perfect blend of <strong>classic and contemporary Italian dishes</strong>.
+        </p>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">About Us</h2>
+            <hr>
+            <p class="lead">
+                Welcome to Taste of Italy, the premier Italian takeaway that has expanded from our humble beginnings in
+                London to now serving customers all over England. Our passion for authentic Italian cuisine is at the
+                heart of everything we do, and we're proud to bring the taste of Italy to your doorstep.
+                <br>
+                Our menu features a wide variety of delicious Italian dishes that are prepared fresh to order using only
+                the finest ingredients. From classic pasta dishes to wood-fired pizzas, our menu has something for
+                everyone, and our chefs take great care to ensure that every dish is bursting with flavour and cooked to
+                perfection.
+                <br>
+                At Taste of Italy, we're committed to providing our customers with exceptional service, when ordering
+                from one of our many takeaway outlets throughout England, and we work
+                hard to ensure that every order is prepared and delivered promptly.
+                <br>
+                We also take great pride in our commitment to using sustainable and locally sourced ingredients wherever
+                possible. We believe that by supporting local farmers and producers, we can provide our customers with
+                the freshest and most delicious ingredients, while also doing our part to help protect the environment.
+                <br>
+                So whether you're looking for a quick and tasty lunch, a romantic dinner for two, or catering for your
+                next event, Taste of Italy has you covered. Order online from many locations
+                throughout England to experience the true taste of Italy, right from the comfort of your own home.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -19,6 +52,7 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Takeaway Menu</h2>
             <h3 class="section-subheading text-muted">The perfect <strong>Italian takeaway</strong></h3>
+            <hr>
         </div>
         <div class="row">
             <div class="col-lg-4">
@@ -27,7 +61,12 @@
                         src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/Pork-Wild-Garlic-Meatballs.jpg"
                         alt="Starters">
                     <h4>Starters</h4>
-                    <p class="text-muted">Pork & Garlic Meatballs</p>
+                    <p class="lead fs-6">Antipasti, or Italian starters, are a tasty way to kick off a meal. These small
+                        dishes feature cured meats, cheeses, olives, and vegetables, often served with bread or
+                        crackers. Popular options include bruschetta, caprese salad, and garlic bread. Perfect
+                        as a light snack or to start off a larger meal, antipasti will get your taste buds going and set
+                        the stage for a fantastic dining experience.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -35,7 +74,14 @@
                     <img class="mx-auto rounded-circle"
                         src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/rustica-pinoli.jpg" alt="Mains">
                     <h4>Mains</h4>
-                    <p class="text-muted">Rustica Pinoli</p>
+                    <p class="lead fs-6">
+                        Italian mains, or "piatti principali," feature bold flavors and hearty portions. From classic
+                        pastas to meat and fish dishes like Spaghetti Pomodoro and Chicken Calabrese, there's something
+                        for
+                        everyone. Vegetarians can enjoy Super Zucca Salad or All-The-Greens Risotto, Italian mains are
+                        sure to
+                        satisfy any appetite.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -43,7 +89,12 @@
                     <img class="mx-auto rounded-circle"
                         src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/tiramisu.png" alt="Desserts">
                     <h4>Desserts</h4>
-                    <p class="text-muted">Tiramisu</p>
+                    <p class="lead fs-6">
+                        Italian desserts, or "dolci," are the perfect sweet ending to a meal. From classic Tiramisu to
+                        refreshing Limoncello Tart, Italian desserts are known for their decadent flavors and elegant
+                        presentation. Whether you crave something creamy or fruity, Italian desserts offer something 
+                        for every sweet tooth. Indulge in a little bit of la dolce vita with a delicious Italian dessert.
+                    </p>
                 </div>
             </div>
         </div>
@@ -58,16 +109,17 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Testimonials</h2>
             <h3 class="section-subheading text-muted">Our Customers reviews</h3>
+            <hr>
             <div id="reviews-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     {% for review in reviews %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ review.user.username }}</h5>
-                                <p class="card-text"><strong>Rating: </strong>{{ review.rating }}/5</p>
-                                <p class="card-text">{{ review.comment }}</p>
-                                <p class="card-text">{{ review.created_at|date }}</p>
+                    <div class="carousel-item {% if forloop.first %}active d-flex justify-content-center mt-5{% endif %}">
+                        <div class="card w-50">
+                            <div class="card-body bg-black text-white rounded">
+                                <h5 class="card-title text-start my-1">User: {{ review.user.username }}</h5>
+                                <p class="card-text lead my-2">{{ review.comment }}</p>
+                                <p class="card-text fs-6 my-2 text-end"><strong>Rating: {{ review.rating }}/5</strong></p>
+                                <p class="card-text ">{{ review.created_at|date }}</p>
                             </div>
                         </div>
                         {% if request.user.is_superuser %}
@@ -76,12 +128,12 @@
                     </div>
                     {% endfor %}
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#reviews-carousel"
+                <button class="carousel-control-prev bg-black rounded-5" type="button" data-bs-target="#reviews-carousel"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#reviews-carousel"
+                <button class="carousel-control-next bg-black rounded-5 w-10" type="button" data-bs-target="#reviews-carousel"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>

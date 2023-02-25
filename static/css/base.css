@@ -7121,13 +7121,14 @@ fieldset:disabled .btn {
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
-    top: 0;
+    top: 5.5rem;
     bottom: 0;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     color: #fff;
     text-align: center;
@@ -12427,7 +12428,7 @@ p {
     font-weight: 400;
     font-style: italic;
     font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -12547,7 +12548,7 @@ section.masthead {
 }
 
 .overlay {
-    background-color: #000000a1;
+    background-color: #000000d6;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
     margin-top: -4rem;
