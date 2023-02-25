@@ -14,9 +14,15 @@
 
     <div class="row w-50">
         <div class="col">
-            <form method="POST" action="{% url 'edit_product' product.id %} " class="form" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %} " class="form text-start" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form | crispy }}
+                {% for field in form %}
+                {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
+                {% endfor %}
                 <div class="text-end">
                     <a href="{% url 'menu' %}" class="btn">Cancel</a>
                     <button class="btn" type="submit">Update product</button>
