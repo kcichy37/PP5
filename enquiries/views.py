@@ -1,20 +1,23 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.conf import settings
 from .forms import EnquiryForm
 from .models import Enquiry
 
 
 def enquiry(request):
+    email = settings.DEFAULT_FROM_EMAIL
+
     if request.method == 'POST':
         form = EnquiryForm(request.POST)
         if form.is_valid():
             enquiry = form.save()
             send_mail(
                 f"{enquiry.subject}",
-                f"Name:{enquiry.full_name}\nE-mail:{enquiry.email}\n\n{enquiry.description}\n\nCreated on:{enquiry.created_on}",
+                f"Name:{enquiry.full_name}\n\n{enquiry.description}\n\nCreated on:{enquiry.created_on}",
 
-                "noreply@tasteofitaly.com",
-                ["tasteofitalyproject@gmail.com"],
+                enquiry.email,
+                [email],
                 fail_silently=False,
             )
             return redirect('enquiry_success')

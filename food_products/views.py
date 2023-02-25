@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import FoodProduct, FoodCategory
 from .forms import ProductForm
-from django.contrib import messages
-# Create your views here.
 
 
 def food_menu(request):
@@ -18,10 +18,15 @@ def food_menu(request):
     return render(request, 'menu/menu.html', context)
 
 
+@login_required
 def all_products(request):
     """
     A view to show all the products for edit and delete
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You dont have permission to enter this page.')
+        return redirect(reverse('home'))
+
     products = FoodProduct.objects.all()
 
     context = {
@@ -31,10 +36,15 @@ def all_products(request):
     return render(request, 'menu/all_products.html', context)
 
 
+@login_required
 def add_product(request):
     """
     Add a product to the store
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You dont have permission to enter this page.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -55,10 +65,15 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """
     Edit a product in the store
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You dont have permission to enter this page.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(FoodProduct, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -82,11 +97,16 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
 
     """
     Delete a product
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You dont have permission to enter this page.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(FoodProduct, pk=product_id)
     product.delete()
     messages.success(request, f'Product {product.name} deleted successfully.')
