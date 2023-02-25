@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mb-2 text-center">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="section-heading text-uppercase">My Favourites</h2>
+            <h4 class="section-subheading text-muted">Quick Order</h4>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        {% if favourites %}
+        {% for favourite in favourites %}
+        <div class="col-md-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {% if favourite.product.image %}
+                        <img src="{{favourite.product.image.url}}" class="card-img rounded-start" alt="{{favourite.product.name}}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{favourite.product.name}}">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{favourite.product.name}}</h5>
+                            <p class="card-text">
+                                {{favourite.product.description|truncatechars:40}}{% if favourite.product.description|length > 40 %}
+                                <span class="text-muted"><a href="#exampleModal{{favourite.product.id}}" class="read-more"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal{{favourite.product.id}}">
+                                        read more
+                                    </a></span>
+                                {% endif %}</p>
+                            <a class="text-info" href="">Edit</a>
+                            <a class="text-danger" href="{% url 'delete_favourites' favourite.id %}">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal{{favourite.product.id}}" tabindex="-1"
+            aria-labelledby="exampleModalLabel{{favourite.product.id}}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel{{favourite.product.id}}">{{favourite.product.name}}
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{favourite.product.description}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>You have not favourites</p>
+        
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

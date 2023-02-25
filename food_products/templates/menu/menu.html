@@ -69,7 +69,14 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
+                                        <h5 class="card-title">
+                                            <form method="POST"
+                                                action="{% url 'add_to_favourites' product.id %}">
+                                                {% csrf_token %}
+                                                <button type="submit">afff</button>
+                                            </form>
+                                            {{product.name}}
+                                        </h5>
                                         <p class="card-text">
                                             {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
                                             <span class="text-muted"><a href="#exampleModal{{product.id}}"
