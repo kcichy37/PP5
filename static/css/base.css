@@ -455,6 +455,11 @@ sup {
     top: -0.5em;
 }
 
+a{
+    color: #cca000;
+    text-decoration: none;
+}
+
 a:hover {
     color: #ffc800;
 }
