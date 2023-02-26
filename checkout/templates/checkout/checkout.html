@@ -12,6 +12,7 @@
         <div class="col">
             <hr>
             <h2 class="section-heading text-uppercase">Checkout</h2>
+            <h3 class="section-subheading text-muted">We deliver to whole of England</h3>
             <hr>
         </div>
     </div>
@@ -71,6 +72,7 @@
             <fieldset class="rounded px-3 mb-5">
                 <legend class="small text-black px-2 w-auto">Delivery</legend>
                 {{ order_form.phone_number | as_crispy_field }}
+                {{ order_form.town_or_city | as_crispy_field }}
                 {{ order_form.street_address1 | as_crispy_field }}
                 {{ order_form.street_address2 | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
@@ -103,10 +105,10 @@
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
-                    <span class="font-weight-bold">Adjust Bag</span>
+                    <span class="btn btn-secondary text-uppercase">Adjust Bag</span>
                 </a>
-                <button id="submit-button" class="btn btn-black rounded-0">
-                    <span class="font-weight-bold">Complete Order</span>
+                <button id="submit-button" class="btn btn-primary">
+                    <span class="text-uppercase">Complete Order</span>
                     <span class="icon">
                         <i class="fas fa-lock"></i>
                     </span>

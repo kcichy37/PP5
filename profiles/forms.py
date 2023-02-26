@@ -17,12 +17,13 @@ class UserProfileForm(forms.ModelForm):
             'default_full_name': 'Full Name',
             'default_email': 'E-mail',
             'default_phone_number': 'Phone Number',
+            'default_town_or_city': 'Town or City',
             'default_postcode': 'Postcode',
             'default_street_address1': 'Street Address 1',
             'default_street_address2': 'Street Address 2',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != '':
                 if self.fields[field].required:

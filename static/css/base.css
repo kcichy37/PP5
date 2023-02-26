@@ -455,7 +455,7 @@ sup {
     top: -0.5em;
 }
 
-a{
+a {
     color: #cca000;
     text-decoration: none;
 }
@@ -474,6 +474,12 @@ a:not([href]):not([class]):hover {
     margin-bottom: 2px;
     margin-top: -1.5rem;
     font-size: 1.2rem;
+}
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content{
+    height: 40rem;
 }
 
 pre,
@@ -4004,9 +4010,9 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #ffc800;
     border-color: #ffc800;
-} */
+}
 
-.btn-check:checked+.btn-outline-warning:focus,
+*/ .btn-check:checked+.btn-outline-warning:focus,
 .btn-check:active+.btn-outline-warning:focus,
 .btn-outline-warning:active:focus,
 .btn-outline-warning.active:focus,
@@ -13026,10 +13032,4 @@ section#contact form#contactForm :-ms-input-placeholder {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     color: #ced4da;
-}
-
-.footer {
-    text-align: center;
-    font-size: 0.9rem;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

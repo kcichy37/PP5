@@ -76,6 +76,7 @@ class StripeWH_Handler:
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_street_address1 = shipping_details.address.line1
                 profile.default_street_address2 = shipping_details.address.line2
+                profile.default_town_or_city = shipping_details.address.city
                 profile.save()
 
         order_exists = False
@@ -86,6 +87,7 @@ class StripeWH_Handler:
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
+                    town_or_city__iexact=shipping_details.address.city,
                     postcode__iexact=shipping_details.address.postal_code,
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
@@ -110,6 +112,7 @@ class StripeWH_Handler:
                     user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
+                    town_or_city=shipping_details.address.city,
                     postcode=shipping_details.address.postal_code,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
