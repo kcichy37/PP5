@@ -14,28 +14,55 @@
     <div class="row">
         {% if favourites %}
         {% for favourite in favourites %}
-        <div class="col-md-4">
-            <div class="card mb-3" style="max-width: 540px;">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-4 col-4">
                         {% if favourite.product.image %}
                         <img src="{{favourite.product.image.url}}" class="card-img rounded-start" alt="{{favourite.product.name}}">
                         {% else %}
                         <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start" alt="{{favourite.product.name}}">
                         {% endif %}
                     </div>
-                    <div class="col-md-8">
+                    <div class="col">
                         <div class="card-body">
-                            <h5 class="card-title">{{favourite.product.name}}</h5>
+                            <a class="btn p-0 fav-star" href="{% url 'delete_favourites' favourite.id %}"><i
+                                    class="fa-solid fa-xmark" title="Remove from favourites"></i></a>
+                            <h6 class="card-title">{{favourite.product.name}}</h6>
                             <p class="card-text">
                                 {{favourite.product.description|truncatechars:40}}{% if favourite.product.description|length > 40 %}
-                                <span class="text-muted"><a href="#exampleModal{{favourite.product.id}}" class="read-more"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal{{favourite.product.id}}">
+                                <span class="text-muted">
+                                    <a href="#exampleModal{{favourite.product.id}}" class="read-more" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{favourite.product.id}}">
                                         read more
-                                    </a></span>
-                                {% endif %}</p>
-                            <a class="text-info" href="">Edit</a>
-                            <a class="text-danger" href="{% url 'delete_favourites' favourite.id %}">Delete</a>
+                                    </a>
+                                </span>
+                                {% endif %}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <strong class="card-text">£{{favourite.product.price}}</strong>
+                                <strong class="card-text">{{favourite.product.calories}}kcal</strong>
+                            </div>
+                            <form class="form" action="{% url 'add_to_bag' favourite.product_id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group qty-position">
+                                    <div class="input-group input-group-sm" style="max-width: 100px;">
+                                        <button class="btn btn-primary decrement-qty"
+                                            data-item_id="{{ favourite.product_id }}" id="decrement-qty_{{ favourite.product_id }}">
+                                            <i class="fas fa-minus fa-sm"></i>
+                                        </button>
+                                        <input type="number" class="form-control text-center qty_input"
+                                            value="1" min="1" max="99" data-item_id="{{ favourite.product_id }}"
+                                            id="id_qty_{{ favourite.product_id }}" name="quantity">
+                                        <button class="btn btn-primary increment-qty"
+                                            data-item_id="{{ favourite.product_id }}" id="increment-qty_{{ favourite.product_id }}">
+                                            <i class="fas fa-plus fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -46,7 +73,8 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel{{favourite.product.id}}">{{favourite.product.name}}
+                        <h1 class="modal-title fs-5" id="exampleModalLabel{{favourite.product.id}}">
+                            {{favourite.product.name}}
                         </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -62,11 +90,13 @@
         </div>
         {% endfor %}
         {% else %}
-        <p>You have not favourites</p>
-        
+        <p>You have no favourites yet.</p>
         {% endif %}
     </div>
 </div>
+{% endblock %}
 
-
+{% block postloadjs %}
+{{block.super}}
+{% include 'menu/includes/quantity_input_script.html' %}
 {% endblock %}

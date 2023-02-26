@@ -6,16 +6,15 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="section-heading text-uppercase">Product Managment</h2>
+            <h2 class="section-heading text-uppercase">Product Management</h2>
             <h3 class="section-subheading text-muted">Add a Product</h3>
             <hr>
         </div>
     </div>
 
-    <div class="row w-50">
-        <div class="col">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
             <form method="POST" action="{% url 'add_product'%} " class="form text-start" enctype="multipart/form-data">
-                {% csrf_token %}
                 {% csrf_token %}
                 {% for field in form %}
                 {% if field.name != 'image' %}
@@ -25,8 +24,8 @@
                 {% endif %}
                 {% endfor %}
                 <div class="text-end">
-                    <a href="{% url 'menu' %}" class="btn">Cancel</a>
-                    <button class="btn" type="submit">Add product</button>
+                    <a href="{% url 'menu' %}" class="btn btn-secondary me-2">Cancel</a>
+                    <button class="btn btn-primary" type="submit">Add product</button>
                 </div>
             </form>
         </div>

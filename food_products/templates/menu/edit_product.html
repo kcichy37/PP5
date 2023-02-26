@@ -6,15 +6,16 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="section-heading text-uppercase">Product Managment</h2>
+            <h2 class="section-heading text-uppercase">Product Management</h2>
             <h3 class="section-subheading text-muted">Edit a Product</h3>
             <hr>
         </div>
     </div>
 
-    <div class="row w-50">
-        <div class="col">
-            <form method="POST" action="{% url 'edit_product' product.id %} " class="form text-start" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST" action="{% url 'edit_product' product.id %} " class="form text-start"
+                enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                 {% if field.name != 'image' %}
@@ -23,12 +24,13 @@
                 {{ field }}
                 {% endif %}
                 {% endfor %}
-                <div class="text-end">
-                    <a href="{% url 'menu' %}" class="btn">Cancel</a>
-                    <button class="btn" type="submit">Update product</button>
+                <div class="text-end mt-2">
+                    <a href="{% url 'menu' %}" class="btn btn-secondary">Cancel</a>
+                    <button class="btn btn-primary" type="submit">Update Product</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 {% endblock %}
