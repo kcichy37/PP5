@@ -64,7 +64,7 @@ root {
     }
 }
 
-body{
+body {
     background-color: #ffffff !important;
 }
 
@@ -158,7 +158,6 @@ body{
 .card-title {
     font-size: 1rem;
     margin-top: -0.7rem;
-    text-decoration: underline;
 }
 
 .card-text {
@@ -192,7 +191,7 @@ body{
     box-shadow: 1.5px 1.5px 5px;
 }
 
-.menu-box{
+.menu-box {
     height: 100px;
     overflow-y: auto;
 }
@@ -241,6 +240,39 @@ body {
     height: 5px;
 }
 
+.fav-star {
+    float: right;
+    position: relative;
+    left: 1rem;
+    bottom: 1.2rem;
+}
+
+.fa-star {
+    color: #ffc107;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.qty-position {
+    position: absolute;
+    bottom: 0;
+    left: 127px;
+}
+
+.add-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 0px !important;
+}
 
 hr {
     margin: 1rem 0;
@@ -254,7 +286,7 @@ hr:not([size]) {
     height: 1px;
 }
 
-.del-banner{
+.del-banner {
     background-color: #ffc107;
 }
 
@@ -3428,7 +3460,7 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-    color: #fff;
+    color: #000;
     background-color: #ffc800;
     border-color: #ffc800;
 }

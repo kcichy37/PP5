@@ -11,7 +11,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    border-top: 20px solid #dca842;
+    border-top: 20px solid #ffc107;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     margin: 0 auto;
@@ -24,10 +24,10 @@
 .testimonial .description {
     padding: 25px 35px;
     margin: 0;
-    background: #dca842;
+    background: #ffc107;
     border-radius: 15px;
     font-size: 20px;
-    color: #fff;
+    color: #000;
     position: relative;
 }
 
@@ -40,7 +40,7 @@
     line-height: 35px;
     border-radius: 8px;
     text-align: center;
-    background: #dca842;
+    background: #ffc107;
     position: absolute;
 }
 
@@ -59,20 +59,11 @@
 .testimonial .testimonial-profile {
     display: table;
     padding: 15px;
-    border: 1px solid #dca842;
+    border: 1px solid #ffc107;
     border-radius: 20px;
     margin: 0 auto;
     position: relative;
     min-height: 2.5rem;
-}
-
-.testimonial .pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 1px solid #dca842;
-    float: left;
-    overflow: hidden;
 }
 
 .testimonial .title {
@@ -80,7 +71,7 @@
     margin: 0 0 0 30px;
     font-size: 19px;
     font-weight: bold;
-    color: #dca842;
+    color: #000;
     position: relative;
     margin: 0;
 }
@@ -99,13 +90,13 @@
 
 .owl-theme .owl-controls .owl-page span {
     background: transparent;
-    border: 1px solid #dca842;
+    border: 1px solid #ffc107;
     opacity: 1;
 }
 
 .owl-theme .owl-controls .owl-page.active span {
-    background: #dca842;
-    border: 1px solid #dca842;
+    background: #ffc107;
+    border: 1px solid #ffc107;
 }
 
 @media only screen and (max-width: 479px) {

@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
 {% endblock %}
-
 {% block content%}
 
 <section class="masthead">
@@ -117,13 +115,13 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-offset-2 col-md-8">
-                    <div id="testimonial-slider" class="owl-carousel">
+                    <div id="testimonial-slider" class="owl-carousel mt-5">
                         {% for review in reviews %}
                         <div class="testimonial">
                             <div class="testimonial-content">
                                 <p class="description shadow">
                                     <strong>{{ review.comment }}</strong>
-                                    <span class="d-flex align-items-end justify-content-center">Rating:
+                                    <span class="d-flex align-items-end justify-content-center fs-6 ">Rating:
                                         {{ review.rating }}/5</span>
                                 </p>
                             </div>
