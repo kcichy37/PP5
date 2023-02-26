@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container mb-2 text-center">
     <div class="row">
-        <div class="col">
+        <div class="col-md-12">
             <hr>
             <h2 class="section-heading text-uppercase">Contact us</h2>
             <h3 class="section-subheading text-muted">Fill out the form to submit your enquiry</h3>
@@ -12,19 +12,37 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-md-6 mb-5">
             <form method="POST" action="{% url 'add_reviews'%} " class="form text-start">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div class="text-end">
-                    <a href="{% url 'menu' %}" class="btn">Cancel</a>
-                    <button class="btn" type="submit">Add review</button>
+                <div class="text-end mt-3">
+                    <a href="{% url 'menu' %}" class="btn btn-primary me-2">Cancel</a>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </form>
         </div>
-        <div class="col">
-            <h4>Contact us information</h4>
+        <div class="col-md-6">
+            <h4>Contact us</h4>
+            <hr>
+            <h5>Opening times</h5>
+            <p class="lead">
+                Monday - Friday: 12:00pm - 10:00pm
+                <br>
+                Saturday - Sunday: 12:00pm - 8:00pm
+            </p>
+            <hr>
+            <h5>E-mail</h5>
+            <p class="lead">
+                TasteofItaly@email.com
+            </p>
+            <hr>
+            <h5>Phone number</h5>
+            <p class="lead">
+                +44 7342346864
+            </p>
         </div>
     </div>
 </div>
+
 {% endblock %}
