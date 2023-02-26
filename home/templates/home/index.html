@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+{% endblock %}
+
 {% block content%}
 
 <section class="masthead">
@@ -92,8 +96,9 @@
                     <p class="lead fs-6">
                         Italian desserts, or "dolci," are the perfect sweet ending to a meal. From classic Tiramisu to
                         refreshing Limoncello Tart, Italian desserts are known for their decadent flavors and elegant
-                        presentation. Whether you crave something creamy or fruity, Italian desserts offer something 
-                        for every sweet tooth. Indulge in a little bit of la dolce vita with a delicious Italian dessert.
+                        presentation. Whether you crave something creamy or fruity, Italian desserts offer something
+                        for every sweet tooth. Indulge in a little bit of la dolce vita with a delicious Italian
+                        dessert.
                     </p>
                 </div>
             </div>
@@ -105,42 +110,54 @@
 </section>
 
 <section class="page-section">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Testimonials</h2>
-            <h3 class="section-subheading text-muted">Our Customers reviews</h3>
-            <hr>
-            <div id="reviews-carousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    {% for review in reviews %}
-                    <div class="carousel-item {% if forloop.first %}active d-flex justify-content-center mt-5{% endif %}">
-                        <div class="card w-50">
-                            <div class="card-body bg-black text-white rounded">
-                                <h5 class="card-title text-start my-1">User: {{ review.user.username }}</h5>
-                                <p class="card-text lead my-2">{{ review.comment }}</p>
-                                <p class="card-text fs-6 my-2 text-end"><strong>Rating: {{ review.rating }}/5</strong></p>
-                                <p class="card-text ">{{ review.created_at|date }}</p>
+    <div class="container text-center">
+        <h2 class="section-heading text-uppercase">Testimonials</h2>
+        <h3 class="section-subheading text-muted">Our Customers reviews</h3>
+        <hr>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-offset-2 col-md-8">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        {% for review in reviews %}
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p class="description shadow">
+                                    <strong>{{ review.comment }}</strong>
+                                    <span class="d-flex align-items-end justify-content-center">Rating:
+                                        {{ review.rating }}/5</span>
+                                </p>
                             </div>
+                            <div class="testimonial-profile">
+                                <h3 class="title">
+                                    {{ review.user.username }}
+                                </h3>
+                            </div>
+                            {% if request.user.is_superuser %}
+                            <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                            {% endif %}
                         </div>
-                        {% if request.user.is_superuser %}
-                        <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
-                        {% endif %}
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-                <button class="carousel-control-prev bg-black rounded-5" type="button" data-bs-target="#reviews-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next bg-black rounded-5 w-10" type="button" data-bs-target="#reviews-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
 </section>
-
 {% endblock%}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#testimonial-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [990, 1],
+            itemsTablet: [768, 1],
+            itemsMobile: [650, 1],
+            pagination: true,
+            navigation: false,
+            autoPlay: true
+        });
+    });
+</script>
+{% endblock %}
