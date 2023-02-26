@@ -264,7 +264,7 @@ input[type=number] {
 .qty-position {
     position: absolute;
     bottom: 0;
-    left: 127px;
+    left: 8.7rem;
 }
 
 .add-btn {
@@ -453,10 +453,6 @@ sub {
 
 sup {
     top: -0.5em;
-}
-
-a {
-    color: #cca000;
 }
 
 a:hover {
@@ -4697,7 +4693,7 @@ fieldset:disabled .btn {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #cca000;
+    color: #7a4500
 }
 
 .nav-link.disabled {
@@ -4732,7 +4728,7 @@ fieldset:disabled .btn {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
+    color: #000;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -12520,7 +12516,7 @@ p {
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    color: #cca000 !important;
 }
 
 @media (min-width: 992px) {
@@ -12947,12 +12943,18 @@ section.masthead .masthead-heading {
     margin-bottom: 0;
 }
 
-.order-btn {
-    text-shadow: 0 0 3px #000, 0 0 5px #000;
-}
-
 .img-brand {
     height: 2.75rem;
+}
+
+.cat-title {
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+    ;
+    color: #fff;
 }
 
 section#contact {

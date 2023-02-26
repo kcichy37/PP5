@@ -10,668 +10,884 @@
             <h3 class="section-subheading text-muted">The perfect <strong>Italian takeaway</strong></h3>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col col-lg-8">
-            <div class="sticky-top menu-nav rounded-4">
-                <ul class="nav justify-content-center text-uppercase fw-bold">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#starters">Starters</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#salads">Salads</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pizza">Pizza</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pasta">Pasta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#risotto">Risotto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#meat-fish">Meat & Fish</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sides">Sides</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#desserts">Desserts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#soft-drinks">Soft Drinks</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu-container starter-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Starters</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container click-jump" id="starters">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'starters' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    {% if product.image %}
-                                    <img src="{{product.image.url}}" class="card-img rounded-start"
-                                        alt="{{product.name}}">
-                                    {% else %}
-                                    <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
-                                        alt="{{product.name}}">
-                                    {% endif %}
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <form method="POST" action="{% url 'add_to_favourites' product.id %}">
-                                            {% csrf_token %}
-                                            <button class="btn p-0 fav-star" type="submit">
-                                                <i class="fa-solid fa-star" title="Add to favorites"></i>
-                                            </button>
-                                        </form>
-                                        <h6 class="card-title">{{product.name}}</h6>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted">
-                                                <a href="#exampleModal{{product.id}}" class="read-more"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a>
-                                            </span>
-                                            {% endif %}
-                                        </p>
-                                        <p class="card-text"><span>£{{product.price}}</span> <span>{{product.calories}}kcal</span></p>
-                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                                            {% csrf_token %}
-                                            <div class="form-group qty-position">
-                                                <div class="input-group input-group-sm" style="max-width: 100px;">
-                                                    <button class="btn btn-primary decrement-qty"
-                                                        data-item_id="{{ product.id }}"
-                                                        id="decrement-qty_{{ product.id }}">
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </button>
-                                                    <input type="number" class="form-control text-center qty_input"
-                                                        value="1" min="1" max="99" data-item_id="{{ product.id }}"
-                                                        id="id_qty_{{ product.id }}">
-                                                    <button class="btn btn-primary increment-qty"
-                                                        data-item_id="{{ product.id }}"
-                                                        id="increment-qty_{{ product.id }}">
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary add-btn">Add</button>
-                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
+</div>
 
 
+<div class="row">
+    <div class="col">
+        <div class="sticky-top menu-nav rounded-4 container">
+            <ul class="nav justify-content-center text-uppercase fw-bold">
+                <li class="nav-item">
+                    <a class="nav-link" href="#starters">Starters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#salads">Salads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pizza">Pizza</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pasta">Pasta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#risotto">Risotto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#meat-fish">Meat & Fish</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sides">Sides</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#desserts">Desserts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#soft-drinks">Soft Drinks</a>
+                </li>
+            </ul>
+        </div>
 
-            <div class="menu-container salads-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Salads</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="salads">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'salads' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-
-
-
-            <!-- Pizza -->
-            <div class="menu-container pizza-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Pizza</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="pizza">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'pizza' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container pasta-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Pasta</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="pasta">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'pasta' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container risotto-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Risotto</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="risotto">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'risotto' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container meat-fish-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Meat & Fish</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="meat-fish">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'meat_fish' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container sides-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Sides</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="sides">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'sides' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">{{product.description}}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container desserts-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Desserts</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="desserts">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'desserts' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <p class="card-text">
-                                            {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
-                                            <span class="text-muted"><a href="#exampleModal{{product.id}}"
-                                                    class="read-more" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{product.id}}">
-                                                    read more
-                                                </a></span>
-                                            {% endif %}</p>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{product.description}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="menu-container soft-drinks-bg d-flex justify-content-center">
-                <div class="row menu-overlay">
-                    <div class="col">
-                        <h2>Soft Drinks</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container click-jump" id="soft-drinks">
-                <div class="row">
-                    {% for product in products %}
-                    {% if product.category.name == 'soft_drinks' %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{{product.image_url}}" class="card-img rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{product.name}}</h5>
-                                        <input type="submit"
-                                            class="btn btn-warning btn-circle text-black position-absolute bottom-0 end-0"
-                                            value="Add"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
+        <div class="menu-container starter-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Starters</h2>
                 </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="menu-bag sticky-top rounded">
-                <div class="container mb-2 text-center">
-                    <div class="row">
-                        <div class="col">
-                            <hr>
-                            <h2 class="section-heading text-uppercase">Your Order</h2>
-                            <hr>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col">
-                            {% if bag_items %}
-                            <div class="table-responsive">
-                                <table class="table table-sm">
-                                    <thead class="text-black">
-                                        <tr>
-                                            <th scope="col">Product Info</th>
-                                            <th scope="col"></th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Qty</th>
-                                            <th scope="col">Subtotal</th>
-                                        </tr>
-                                    </thead>
-                                    {% for item in bag_items %}
-                                    <tr>
-                                        <td class="p-3 w-25">
-                                            <img class="img-fluid rounded bag-img-menu"
-                                                src="{{ item.product.image.url }}" </td>
-                                        <td class="py-3">
-                                            <p class="my-0"><strong>{{item.product.name}}</strong></p>
-                                        </td>
-                                        <td class="py-3">
-                                            <p class="my-0">£{{item.product.price}}</p>
-                                        </td>
-                                        <td class="py-3">
-                                            <p class="my-0">{{item.quantity}}</p>
-                                        </td>
-                                        <td class="py-3">
-                                            <p class="my-0">{{item.product.price}}</p>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    <tr>
-                                        <td class="pt-5 text-end" colspan="5">
-                                            <h6><strong>Bag Total: £{{total|floatformat:2}}</strong></h6>
-                                            <h6>Delivery: £{{delivery|floatformat:2}}</h6>
-                                            <h4 class="mt-4"><strong>Grand Total:
-                                                    £{{grand_total|floatformat:2}}</strong></h4>
-                                            {% if free_delivery_delta > 0 %}
-                                            <p class="mb-1 text-danger">
-                                                You could get free drelivery by spending just
-                                                <strong>£{{ free_delivery_delta }}</strong> more!
-                                            </p>
-                                            {% endif %}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" class="text-end">
-                                            <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                                <span class="icon">
-                                                    <i class="fas fa-chevron-left"></i>
-                                                </span>
-                                                <span class="text-uppercase">Back to menu </span>
-                                            </a>
-                                            <a href="" class="btn btn-outline-black rounded-0 btn-lg">
-                                                <span class="text-uppercase">Secure Checkout</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
+        <div class="container click-jump" id="starters">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'starters' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
                             </div>
-                            {% else %}
-                            <p class="lead mb-5">Your bag is empty.</p>
-                            <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Back to menu </span>
-                            </a>
-                            {% endif %}
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+        <div class="menu-container salads-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Salads</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="salads">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'salads' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+
+        <!-- Pizza -->
+        <div class="menu-container pizza-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Pizza</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="pizza">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'pizza' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">{{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container pasta-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Pasta</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container click-jump" id="pasta">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'pasta' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container risotto-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Risotto</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="risotto">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'risotto' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container meat-fish-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Meat & Fish</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="meat-fish">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'meat_fish' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container sides-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Sides</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="sides">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'sides' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container desserts-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Desserts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="desserts">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'desserts' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text">
+                                        {{product.description|truncatechars:40}}{% if product.description|length > 40 %}
+                                        <span class="text-muted">
+                                            <a href="#exampleModal{{product.id}}" class="read-more"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal{{product.id}}">
+                                                read more
+                                            </a>
+                                        </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="card-text"><span>£{{product.price}}</span>
+                                        <span>{{product.calories}}kcal</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}" name="quantity">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="menu-container soft-drinks-bg d-flex justify-content-center text-center">
+            <div class="row menu-overlay">
+                <div class="col">
+                    <h2 class="cat-title">Soft Drinks</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container click-jump" id="soft-drinks">
+            <div class="row">
+                {% for product in products %}
+                {% if product.category.name == 'soft_drinks' %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <img src="{{product.image.url}}" class="card-img rounded-start" alt="{{product.name}}">
+                                {% else %}
+                                <img src="{{ MEDIA_URL}}noimage.png" class="card-img rounded-start"
+                                    alt="{{product.name}}">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'add_to_favourites' product.id %}">
+                                        {% csrf_token %}
+                                        <button class="btn p-0 fav-star" type="submit">
+                                            <i class="fa-solid fa-star" title="Add to favorites"></i>
+                                        </button>
+                                    </form>
+                                    <h6 class="card-title">{{product.name}}</h6>
+                                    <p class="card-text"><span>£{{product.price}}</span></p>
+                                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group qty-position">
+                                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                                <button class="btn btn-primary decrement-qty"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </button>
+                                                <input type="number" name="quantity" class="form-control text-center qty_input"
+                                                    value="1" min="1" max="99" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}">
+                                                <button class="btn btn-primary increment-qty"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal{{product.id}}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel{{product.id}}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel{{product.id}}">
+                                    {{product.name}}
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{product.description}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
-
 {% endblock%}
 
 {% block postloadjs %}
