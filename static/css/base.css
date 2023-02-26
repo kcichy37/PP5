@@ -3507,8 +3507,8 @@ fieldset:disabled .btn {
 
 .btn-secondary {
     color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color: #000;
+    border-color: #000;
 }
 
 .btn-secondary:hover {
@@ -4004,7 +4004,7 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #ffc800;
     border-color: #ffc800;
-}
+} */
 
 .btn-check:checked+.btn-outline-warning:focus,
 .btn-check:active+.btn-outline-warning:focus,

@@ -28,31 +28,31 @@
                     </thead>
                     {% for item in bag_items %}
                     <tr>
-                        <td class="p-3 w-25">
-                            <img class="img-fluid rounded bag-img" src="{{ item.product.image.url }}" </td>
-                        <td class="py-3">
-                            <p class="my-0"><strong>{{item.product.name}}</strong></p>
+                        <td class="">
+                            <img class="img-fluid rounded bag-img" src="{{ item.product.image.url }}">
                         </td>
-                        <td class="py-3">
-                            <p class="my-0">£{{item.product.price}}</p>
+                        <td class="">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </td>
-                        <td class="py-3">
-                            <form class="form update-form d-flex justify-content-center" method="POST"
-                                action="{% url 'adjust_bag' item.item_id %}">
+                        <td class="">
+                            <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+                        <td class="">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
-                                <div class="form-group w-50">
+                                <div class="form-group">
                                     <div class="input-group">
-                                        <button class="btn btn-primary decrement-qty" data-item_id="{{ item.item_id }}"
-                                            id="decrement-qty_{{ item.item_id }}">
-                                            <i class="fas fa-minus fa-sm"></i>
-                                        </button>
-                                        <input type="number" name="quantity" class="form-control text-center qty_input"
-                                            value="{{ item.quantity }}" min="1" max="99"
-                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                        <button class="btn btn-primary increment-qty" data-item_id="{{ item.item_id }}"
-                                            id="increment-qty_{{ item.item_id }}">
-                                            <i class="fas fa-plus fa-sm"></i>
-                                        </button>
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-primary decrement-qty" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                <i class="fas fa-minus fa-sm"></i>
+                                            </button>
+                                        </div>
+                                        <input type="number" name="quantity" class="form-control text-center qty_input" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary increment-qty" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <i class="fas fa-plus fa-sm"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -60,18 +60,18 @@
                             <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{item.product.price | calc_subtotal:item.quantity}}</p>
+                            <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td class="pt-5 text-end" colspan="5">
-                            <h6><strong>Bag Total: £{{total|floatformat:2}}</strong></h6>
-                            <h6>Delivery: £{{delivery|floatformat:2}}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: £{{grand_total|floatformat:2}}</strong></h4>
+                        <td class="text-end" colspan="5">
+                            <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h4 class=""><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
-                                You could get free drelivery by spending just
+                            <p class="text-danger">
+                                You could get free delivery by spending just
                                 <strong>£{{ free_delivery_delta }}</strong> more!
                             </p>
                             {% endif %}
@@ -79,13 +79,13 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-end">
-                            <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'menu' %}" class="btn btn-secondary">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Back to menu </span>
                             </a>
-                            <a href="" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn btn-primary">
                                 <span class="text-uppercase">Secure Checkout</span>
                             </a>
                         </td>
