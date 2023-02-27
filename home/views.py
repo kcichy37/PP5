@@ -32,7 +32,7 @@ def add_reviews(request):
             review.user = request.user
             review.save()
             messages.success(request, 'Successfully added a review!')
-            return redirect(reverse('home'))
+            return redirect(reverse('add_reviews'))
         else:
             messages.error(
                 request, 'Failed to add product. Please ensure the form is valid')
@@ -54,7 +54,7 @@ def delete_review(request, reviews_id):
     if request.user.is_superuser:
         reviews.delete()
         messages.success(request, 'The review has been deleted')
-        return redirect(reverse('home'))
+        return redirect(reverse('add_reviews'))
     elif request.user == reviews.user:
         reviews.delete()
         messages.success(request, 'The review has been deleted')

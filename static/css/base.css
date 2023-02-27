@@ -64,10 +64,6 @@ root {
     }
 }
 
-body {
-    background-color: #ffffff !important;
-}
-
 /* CSS for menu template */
 .menu-overlay {
     background: #00000070;
@@ -478,7 +474,7 @@ a:not([href]):not([class]):hover {
 
 /* Allauth form formatting */
 
-.allauth-form-inner-content{
+.allauth-form-inner-content {
     height: 40rem;
 }
 
@@ -13032,4 +13028,35 @@ section#contact form#contactForm :-ms-input-placeholder {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     color: #ced4da;
+}
+
+/* Responsive css */
+
+@media (max-width: 920px){
+    .lead{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 450px){
+
+    .lead{
+        font-size: 1rem;
+    }
+
+    .masthead p{
+        font-size: 1rem;
+    }
+
+    .masthead-heading{
+        font-size: 2rem !important;
+    }
+
+    .masthead{
+        height: 600px !important;
+    }
+
+    h2{
+        font-size: 2.5rem;
+    }
 }

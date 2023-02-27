@@ -53,8 +53,7 @@
 
 </head>
 
-<body id="page-top" data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
-
+<body class="h-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
             <div class="container-fluid d-flex align-items-end">
@@ -95,6 +94,7 @@
                                 {% endif %}
                                 <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
                                 <li><a href="{% url 'my_favourites' %}" class="dropdown-item">My Favourites</a></li>
+                                <li><a href="{% url 'add_reviews' %}" class="dropdown-item">My Reviews</a></li>
                                 <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                                 {% else %}
                                 <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
