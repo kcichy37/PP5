@@ -6,11 +6,18 @@ class OrderForm(forms.ModelForm):
     """
     A form for ordering
     """
+
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2',
-                  'postcode', 'town_or_city')
+        fields = (
+            "full_name",
+            "email",
+            "phone_number",
+            "street_address1",
+            "street_address2",
+            "postcode",
+            "town_or_city",
+        )
 
     def __init__(self, *args, **kwargs):
         """
@@ -19,21 +26,21 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
-            'postcode': 'Postcode',
-            'town_or_city': 'Town or City',
+            "full_name": "Full Name",
+            "email": "Email Address",
+            "phone_number": "Phone Number",
+            "street_address1": "Street Address 1",
+            "street_address2": "Street Address 2",
+            "postcode": "Postcode",
+            "town_or_city": "Town or City",
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields["full_name"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
+                placeholder = f"{placeholders[field]} *"
             else:
                 placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].widget.attrs["placeholder"] = placeholder
+            self.fields[field].widget.attrs["class"] = "stripe-style-input"
             self.fields[field].label = False

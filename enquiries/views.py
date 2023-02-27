@@ -12,23 +12,22 @@ def enquiry(request):
     """
     email = settings.DEFAULT_FROM_EMAIL
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = EnquiryForm(request.POST)
         if form.is_valid():
             enquiry = form.save()
-            messages.success(request, 'Enquiry sent')
+            messages.success(request, "Enquiry sent")
             send_mail(
                 f"{enquiry.subject}",
                 f"Name:{enquiry.full_name}\n\n{enquiry.description}\n\nCreated on:{enquiry.created_on}",
-
                 enquiry.email,
                 [email],
                 fail_silently=False,
             )
-            return redirect('enquiry')
+            return redirect("enquiry")
         else:
             messages.error(request, "Enquiry can't be sent")
     else:
         form = EnquiryForm()
 
-    return render(request, 'enquiries/enquiry.html', {'form': form})
+    return render(request, "enquiries/enquiry.html", {"form": form})

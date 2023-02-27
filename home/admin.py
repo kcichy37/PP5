@@ -6,14 +6,21 @@ class ReviewsAdmin(admin.ModelAdmin):
     """
     Admin view for enquires
     """
-    fields = ('user',
-              'comment',
-              'rating',)
 
-    list_display = ('user', 'comment', 'rating',
-                    'created_on',)
+    fields = (
+        "user",
+        "comment",
+        "rating",
+    )
 
-    ordering = ('-created_on',)
+    list_display = (
+        "user",
+        "comment",
+        "rating",
+        "created_on",
+    )
+
+    ordering = ("-created_on",)
 
 
 admin.site.register(Reviews, ReviewsAdmin)

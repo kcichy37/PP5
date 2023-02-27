@@ -5,6 +5,7 @@
 {% endblock %}
 {% block content%}
 
+<!-- Overlay and front page background picture -->
 <section class="masthead">
     <div class="container overlay rounded">
         <div class="masthead-subheading">Welcome To</div>
@@ -25,6 +26,7 @@
     </div>
 </section>
 
+<!-- About us  -->
 <section class="page-section">
     <div class="container">
         <div class="text-center">
@@ -60,6 +62,7 @@
     </div>
 </section>
 
+<!-- Takeaway menu -->
 <section class="page-section bg-light">
     <div class="container">
         <div class="text-center">
@@ -75,9 +78,12 @@
                         alt="Starters">
                     <h4 class="text-center">Starters</h4>
                     <p class="lead fs-6">
-                        Antipasti, or Italian starters, are a tasty way to kick off a meal. These small dishes feature cured
-                        meats, cheeses, olives, and vegetables, often served with bread or crackers. Popular options include
-                        bruschetta, caprese salad, and garlic bread. Perfect as a light snack or to start off a larger meal,
+                        Antipasti, or Italian starters, are a tasty way to kick off a meal. These small dishes feature
+                        cured
+                        meats, cheeses, olives, and vegetables, often served with bread or crackers. Popular options
+                        include
+                        bruschetta, caprese salad, and garlic bread. Perfect as a light snack or to start off a larger
+                        meal,
                         antipasti will get your taste buds going and set the stage for a fantastic dining experience.
                     </p>
                 </div>
@@ -88,9 +94,12 @@
                         src="https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/rustica-pinoli.jpg" alt="Mains">
                     <h4 class="text-center">Mains</h4>
                     <p class="lead fs-6">
-                        Italian mains, or "piatti principali," feature bold flavors and hearty portions. From classic pastas to
-                        meat and fish dishes like Spaghetti Pomodoro and Chicken Calabrese, there's something for everyone.
-                        Vegetarians can enjoy Super Zucca Salad or All-The-Greens Risotto, Italian mains are sure to satisfy
+                        Italian mains, or "piatti principali," feature bold flavors and hearty portions. From classic
+                        pastas to
+                        meat and fish dishes like Spaghetti Pomodoro and Chicken Calabrese, there's something for
+                        everyone.
+                        Vegetarians can enjoy Super Zucca Salad or All-The-Greens Risotto, Italian mains are sure to
+                        satisfy
                         any appetite.
                     </p>
                 </div>
@@ -103,7 +112,8 @@
                     <p class="lead fs-6">
                         Italian desserts, or "dolci," are the perfect sweet ending to a meal. From classic Tiramisu to
                         refreshing Limoncello Tart, Italian desserts are known for their decadent flavors and elegant
-                        presentation. Whether you crave something creamy or fruity, Italian desserts offer something for every
+                        presentation. Whether you crave something creamy or fruity, Italian desserts offer something for
+                        every
                         sweet tooth. Indulge in a little bit of la dolce vita with a delicious Italian dessert.
                     </p>
                 </div>
@@ -115,7 +125,7 @@
     </div>
 </section>
 
-
+<!-- Our customers reviews -->
 <section class="page-section mb-5">
     <div class="container text-center">
         <h2 class="section-heading text-uppercase">Testimonials</h2>
@@ -140,7 +150,8 @@
                                 </h3>
                             </div>
                             {% if request.user.is_superuser %}
-                            <a class="text-danger" href="{% url 'delete_review' review.id %}" onclick="return confirm('Are you sure you want to delete this review?')">Delete</a>
+                            <a class="text-danger" href="{% url 'delete_review' review.id %}"
+                                onclick="return confirm('Are you sure you want to delete this review?')">Delete</a>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -148,7 +159,8 @@
                     {% if user.is_authenticated %}
                     <a class="btn btn-primary mt-5" href="{% url 'add_reviews' %}">Leave a review</a>
                     {% else %}
-                    <p class="lead text-uppercase">You need to <a href="{% url 'account_signup' %}">Create an account</a> or
+                    <p class="lead text-uppercase">You need to <a href="{% url 'account_signup' %}">Create an
+                            account</a> or
                         <a href="{% url 'account_login' %}">login</a> to leave a review.</p>
                     {% endif %}
                 </div>

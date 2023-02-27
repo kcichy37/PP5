@@ -5,21 +5,21 @@ from .models import FoodProduct, FoodCategory
 # Register your models here.
 class FoodProductAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'category',
-        'price',
-        'image_url',
-        'image',
+        "name",
+        "category",
+        "price",
+        "image_url",
+        "image",
     )
 
-    ordering = ('category',)
+    ordering = ("category",)
 
 
 class FoodCategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'pk',
-        'friendly_name',
-        'name',
+        "pk",
+        "friendly_name",
+        "name",
     )
 
 

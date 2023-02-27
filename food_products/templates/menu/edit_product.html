@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Heading -->
 <div class="container mb-2 text-center">
     <div class="row">
         <div class="col">
@@ -12,6 +13,7 @@
         </div>
     </div>
 
+    <!-- Edit form -->
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="POST" action="{% url 'edit_product' product.id %} " class="form text-start"

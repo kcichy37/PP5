@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Heading -->
 <div class="container mb-2 text-center">
     <div class="row">
         <div class="col">
@@ -12,6 +13,7 @@
         </div>
     </div>
 
+    <!-- Nav for food categories -->
     <div class="row">
         <div class="col">
             <div class="sticky-top menu-nav rounded-4 container">
@@ -46,6 +48,7 @@
                 </ul>
             </div>
 
+            <!-- Heading -->
             <div class="container-fluid mb-2">
                 <div class="row">
                     <div class="col">
@@ -56,6 +59,7 @@
                 </div>
             </div>
 
+            <!-- Starters -->
             <div class="container click-jump" id="starters">
                 <div class="row">
                     {% for product in products %}
@@ -126,6 +130,7 @@
                 </div>
             </div>
 
+            <!-- Heading -->
             <div class="container-fluid mb-2">
                 <div class="row">
                     <div class="col">
@@ -136,6 +141,7 @@
                 </div>
             </div>
 
+            <!-- Salads -->
             <div class="container click-jump" id="salads">
                 <div class="row">
                     {% for product in products %}
@@ -206,6 +212,7 @@
                 </div>
             </div>
 
+            <!-- Heading -->
             <div class="container-fluid mb-2">
                 <div class="row">
                     <div class="col">
@@ -216,6 +223,7 @@
                 </div>
             </div>
 
+            <!-- Pizza -->
             <div class="container click-jump" id="pizza">
                 <div class="row">
                     {% for product in products %}
@@ -289,6 +297,7 @@
         </div>
     </div>
 
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -299,6 +308,7 @@
         </div>
     </div>
 
+    <!-- Pasta -->
     <div class="container click-jump" id="pasta">
         <div class="row">
             {% for product in products %}
@@ -364,6 +374,7 @@
         </div>
     </div>
 
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -374,6 +385,7 @@
         </div>
     </div>
 
+    <!-- Risotto -->
     <div class="container click-jump" id="risotto">
         <div class="row">
             {% for product in products %}
@@ -439,6 +451,7 @@
         </div>
     </div>
 
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -449,6 +462,7 @@
         </div>
     </div>
 
+    <!-- Meat and fish -->
     <div class="container click-jump" id="meat_fish">
         <div class="row">
             {% for product in products %}
@@ -514,7 +528,7 @@
         </div>
     </div>
 
-
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -525,6 +539,7 @@
         </div>
     </div>
 
+    <!-- Sides -->
     <div class="container click-jump" id="sides">
         <div class="row">
             {% for product in products %}
@@ -590,7 +605,7 @@
         </div>
     </div>
 
-
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -601,6 +616,7 @@
         </div>
     </div>
 
+    <!-- Desserts -->
     <div class="container click-jump" id="desserts">
         <div class="row">
             {% for product in products %}
@@ -666,7 +682,7 @@
         </div>
     </div>
 
-
+    <!-- Heading -->
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col">
@@ -677,6 +693,7 @@
         </div>
     </div>
 
+    <!-- Soft drinks -->
     <div class="container click-jump" id="soft-drinks">
         <div class="row">
             {% for product in products %}
@@ -701,8 +718,8 @@
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
                                     <a class="text-danger"
-                                    onclick="return confirm('Are you sure you want to delete this review?')"
-                                    href="{% url 'delete_product' product.id %}">Delete</a>
+                                        onclick="return confirm('Are you sure you want to delete this review?')"
+                                        href="{% url 'delete_product' product.id %}">Delete</a>
                                 </div>
                             </div>
                         </div>

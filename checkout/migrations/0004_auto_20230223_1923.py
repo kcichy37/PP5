@@ -5,21 +5,26 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('profiles', '0001_initial'),
-        ('checkout', '0003_order_postcode'),
+        ("profiles", "0001_initial"),
+        ("checkout", "0003_order_postcode"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='order',
-            name='user_profile',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='orders', to='profiles.userprofile'),
+            model_name="order",
+            name="user_profile",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="orders",
+                to="profiles.userprofile",
+            ),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='postcode',
+            model_name="order",
+            name="postcode",
             field=models.CharField(default=1, max_length=20),
             preserve_default=False,
         ),
