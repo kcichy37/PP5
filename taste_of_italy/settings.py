@@ -130,7 +130,7 @@ WSGI_APPLICATION = "taste_of_italy.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    DATABASE = {
+    DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
