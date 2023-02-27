@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /favorites/
+Sitemap: https://taste-of-italy.herokuapp.com/sitemap.xml
