@@ -1,0 +1,64 @@
+[{
+    "pk": 1,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "starters",
+        "friendly_name": "Starters"
+    }
+}, {
+    "pk": 2,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "salads",
+        "friendly_name": "Salads"
+    }
+}, {
+    "pk": 3,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "pizza",
+        "friendly_name": "Pizza"
+    }
+}, {
+    "pk": 4,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "pasta",
+        "friendly_name": "Pasta"
+    }
+}, {
+    "pk": 5,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "risotto",
+        "friendly_name": "Risotto"
+    }
+}, {
+    "pk": 7,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "meat_fish",
+        "friendly_name": "Meat & Fish"
+    }
+}, {
+    "pk": 8,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "sides",
+        "friendly_name": "Sides"
+    }
+}, {
+    "pk": 9,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "desserts",
+        "friendly_name": "Desserts"
+    }
+}, {
+    "pk": 10,
+    "model": "food_products.foodcategory",
+    "fields": {
+        "name": "soft_drinks",
+        "friendly_name": "Soft Drinks"
+    }
+}]

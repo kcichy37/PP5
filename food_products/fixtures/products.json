@@ -1,0 +1,990 @@
+[
+{
+    "model": "food_products.foodproduct",
+    "pk": 3,
+    "fields": {
+        "category": 1,
+        "name": "Pork & Garlic Meatballs",
+        "description": "In a slow-roasted tomato sauce with mozzarella.",
+        "price": "7.75",
+        "calories": 636,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pork_wild_garlic.jpg",
+        "image": "pork_wild_garlic_meatballs.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 7,
+    "fields": {
+        "category": 1,
+        "name": "Fonduta Formaggi",
+        "description": "A melting pot of cheese served with our Little Soul Breads to dip.",
+        "price": "7.45",
+        "calories": 967,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fonduta_bread.jpg",
+        "image": "fonduta_bread.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 8,
+    "fields": {
+        "category": 1,
+        "name": "Bruschetta",
+        "description": "Tomatoes with red onion and fresh basil, on toasted Italian bread with pesto.",
+        "price": "6.75",
+        "calories": 602,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/bruschetta.jpg",
+        "image": "bruschetta.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 9,
+    "fields": {
+        "category": 1,
+        "name": "Mozzarella Arancini",
+        "description": "Mini breadcrumbed risotto rice balls with mozzarella goodness, and a smoky chili jelly dip.",
+        "price": "6.95",
+        "calories": 377,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/mozzarella-arancini.jpg",
+        "image": "mozzarella_arancini.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 10,
+    "fields": {
+        "category": 1,
+        "name": "Calamari",
+        "description": "Crispy squid served with lemon & rosemary aioli.",
+        "price": "7.95",
+        "calories": 533,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/calamari_small.jpg",
+        "image": "calamari_small.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 11,
+    "fields": {
+        "category": 1,
+        "name": "Caprese Salad",
+        "description": "That's cah-pray-zey. Bufala mozzarella with tomatoes, red onion, and avocado.",
+        "price": "6.95",
+        "calories": 417,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/caprese_salad.jpg",
+        "image": "caprese_salad.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 12,
+    "fields": {
+        "category": 1,
+        "name": "The Sharing Stack for Two",
+        "description": "Our greatest hits: mini mozzarella arancini, garlic bread, bruschetta and calamari with a lemon & rosemary aioli.",
+        "price": "16.95",
+        "calories": 2081,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/the_sharer.jpg",
+        "image": "the_sharer.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 13,
+    "fields": {
+        "category": 1,
+        "name": "Grazing Board for Two",
+        "description": "Prosciutto, spianata salami, buffalo mozzarella, roasted peppers, olives, bruschetta, and a smoky chili jelly, served with our Little Soul Breads for the ultimate sharer.",
+        "price": "14.95",
+        "calories": 1822,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/grazing_board_for_two.jpg",
+        "image": "grazing_board_for_two.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 14,
+    "fields": {
+        "category": 2,
+        "name": "Chicken & Prosciutto Salad",
+        "description": "Chicken, crispy prosciutto, avocado, tomatoes, and mixed salad leaves, with a caesar dressing and riserva cheese.",
+        "price": "14.75",
+        "calories": 471,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/the_caesar.jpg",
+        "image": "the_caesar.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 15,
+    "fields": {
+        "category": 2,
+        "name": "Super Zucca Salad",
+        "description": "Roasted butternut squash, goat's cheese, lentils, courgette and mixed salad leaves. With a white balsamic dressing.",
+        "price": "13.25",
+        "calories": 316,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/the_zucca.jpg",
+        "image": "the_zucca.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 16,
+    "fields": {
+        "category": 3,
+        "name": "Big Zuu's Rustica",
+        "description": "A pizza of two halves - one, spring onions, mozzarella, balsamic onions, pesto, and goat's cheese on a white base. The other, is spinach, roasted peppers, roquito peppers, harissa, spring onions, pea shoots, and mozzarella on a tomato base.",
+        "price": "15.95",
+        "calories": 1311,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/big_zuu_rustica.jpg",
+        "image": "big_zuu_rustica.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 17,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Pepperoni Campagna",
+        "description": "Pepperoni, ham, mushrooms, and mozzarella. The much-loved staple is done our way.",
+        "price": "15.50",
+        "calories": 1078,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica+_pepperoni_campagna.png",
+        "image": "rustica__pepperoni_campagna.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 18,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Primavera",
+        "description": "Goat’s cheese, artichokes, spinach, fire-roasted peppers, olives, mozzarella, slow-roasted tomatoes, rocket, and pesto. A slice of spring all year round.",
+        "price": "15.25",
+        "calories": 1394,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_primavera.jpg",
+        "image": "rustica_primavera.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 19,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Meat Sofia",
+        "description": "Say hello to a triple-threat of harissa chicken, pepperoni, torn pork & garlic meatballs, topped off with mozzarella, spicy roquito chillies and rosemary.",
+        "price": "16.25",
+        "calories": 1354,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_meat_sofia.png",
+        "image": "rustica_meat_sofia.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 20,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Margherita",
+        "description": "Everyone’s go-to, made in our signature Rustica style with tomato, mozzarella, and fresh basil.",
+        "price": "12.95",
+        "calories": 896,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_margherita.png",
+        "image": "rustica_margherita.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 21,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Vegan Margherita",
+        "description": "Everyone’s go-to, made in our signature Rustica style with tomato, vegan MozzaRisella, and fresh basil",
+        "price": "12.95",
+        "calories": 894,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_vegan_margherita.png",
+        "image": "rustica_vegan_margherita.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 22,
+    "fields": {
+        "category": 3,
+        "name": "Black Truffle Salami & Mushroom",
+        "description": "A white base with truffle salami, mushroom, crispy prosciutto, buffalo mozzarella, riserva cheese, truffle-infused oil, and crispy sage. This is a must-try.",
+        "price": "16.45",
+        "calories": 1362,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/truffle_salami_pizza.png",
+        "image": "truffle_salami_pizza.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 23,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Pure Pepperoni",
+        "description": "We've tripled the pepperoni and doubled the mozzarella. A classic for a reason.",
+        "price": "15.25",
+        "calories": 1651,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_pepperoni.jpg",
+        "image": "rustica_pepperoni.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 24,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Pinoli",
+        "description": "A rustic combo of goat’s cheese, mozzarella, caramelised balsamic onions, sunblush tomatoes, pine nuts, and riserva cheese.",
+        "price": "14.95",
+        "calories": 1074,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica-pinoli.jpg",
+        "image": "rustica_pinoli.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 25,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Piccante",
+        "description": "Get spicy with 'nduja sausage, pepperoni, spianata piccante salami and spicy roquito chillies, with mushrooms, mozzarella, rocket and mascarpone to top it off.",
+        "price": "15.95",
+        "calories": 1726,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_piccante.jpg",
+        "image": "rustica_piccante.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 26,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Chicken & Fiery Roquito",
+        "description": "Harissa chicken breast fired up with spicy roquito chillies and sunblush tomatoes. Topped with mozzarella, riserva cheese and fresh basil.",
+        "price": "15.25",
+        "calories": 1346,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chicken_fiery_roquito.jpg",
+        "image": "chicken_fiery_roquito.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 27,
+    "fields": {
+        "category": 3,
+        "name": "Rustica Parmigiana",
+        "description": "Our take on a classic: grilled aubergine, sunblush tomatoes, and smoked mozzarella topped with toasted pine nuts, buffalo mozzarella, and fresh basil.",
+        "price": "15.95",
+        "calories": 1181,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_parmigiana.jpg",
+        "image": "rustica_parmigiana.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 28,
+    "fields": {
+        "category": 3,
+        "name": "Vegan Aubergine & Pesto",
+        "description": "Roasted aubergine, sunblush tomatoes and vegan MozzaRisella, topped with toasted pine nuts, green pesto and fresh basil.",
+        "price": "15.50",
+        "calories": 938,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/rustica_vegan_aubergine_and_pesto.jpg",
+        "image": "rustica_vegan_aubergine_and_pesto.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 29,
+    "fields": {
+        "category": 3,
+        "name": "Meatless 'Meatballs' Calzone",
+        "description": "A folded pizza filled with meatless 'meatballs', vegan MozzaRisella, red peppers, calabrese sauce, pesto, olives, spinach & garlic.",
+        "price": "14.95",
+        "calories": 1196,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/meatless-calzone.jpg",
+        "image": "meatless_calzone.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 30,
+    "fields": {
+        "category": 3,
+        "name": "Calzone Carne Piccante",
+        "description": "A folded pizza stuffed full of pork & garlic meatballs, harissa chicken, bolognese, mozzarella, spicy roquito chillies and mushrooms. With a smoky tomato dip on the side.",
+        "price": "15.45",
+        "calories": 1113,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/calzone_piccante.jpg",
+        "image": "calzone_piccante.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 31,
+    "fields": {
+        "category": 3,
+        "name": "Calzone Pollo Spinaci",
+        "description": "A folded pizza, full of chicken, prosciutto, spinach, mushrooms and mozzarella in a creamy béchamel sauce. With a smoky tomato dip on the side.",
+        "price": "15.45",
+        "calories": 1102,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/calzone_pollo_spinaci.jpg",
+        "image": "calzone_pollo_spinaci.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 32,
+    "fields": {
+        "category": 3,
+        "name": "Classic Margherita",
+        "description": "Tomato, mozzarella, and fresh basil.",
+        "price": "10.95",
+        "calories": 771,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/classic_marg.jpg",
+        "image": "classic_marg.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 33,
+    "fields": {
+        "category": 3,
+        "name": "Classic Vegan Margherita",
+        "description": "With tomato, vegan MozzaRisella, and fresh basil.",
+        "price": "10.95",
+        "calories": 708,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/gluten_vegan_margherita.jpg",
+        "image": "gluten_vegan_margherita.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 34,
+    "fields": {
+        "category": 3,
+        "name": "Classic Pepperoni Campagna",
+        "description": "Pepperoni, ham, mushrooms, and mozzarella.",
+        "price": "13.50",
+        "calories": 927,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/classic_pepperoni_campagna.jpg",
+        "image": "classic_pepperoni_campagna.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 35,
+    "fields": {
+        "category": 4,
+        "name": "Baked Crab & Ricotta Cannelloni",
+        "description": "Cannelloni filled with crab and ricotta cheese in a creamy pecorino, pea & sundried tomato sauce with spinach, grated riserva cheese & pea shoots.​",
+        "price": "15.95",
+        "calories": 1214,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/baked_crab_ricotta_cannelloni.jpg",
+        "image": "baked_crab_ricotta_cannelloni.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 36,
+    "fields": {
+        "category": 4,
+        "name": "Spaghetti Chorizo Carbonara",
+        "description": "A classic with a twist: spaghetti in a cheesy carbonara sauce with pancetta and chorizo.",
+        "price": "14.75",
+        "calories": 1046,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chorizo_carbonara.jpg",
+        "image": "chorizo_carbonara.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 37,
+    "fields": {
+        "category": 4,
+        "name": "Casareccia Pork & Garlic Meatballs",
+        "description": "Oven-baked pork & garlic meatballs with mozzarella & spinach, in a slow-roasted tomato sauce, spiced with chili flakes.",
+        "price": "15.50",
+        "calories": 1210,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pork_wild_garlic_meatballs.jpg",
+        "image": "pork_wild_garlic_meatballs_PAYBpg5.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 38,
+    "fields": {
+        "category": 4,
+        "name": "King Prawn Linguine",
+        "description": "King prawns twirled up in seafood and roquito chili sauce served with courgettes and pea shoots.",
+        "price": "15.45",
+        "calories": 416,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/king_prawn_linguine.jpg",
+        "image": "king_prawn_linguine.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 39,
+    "fields": {
+        "category": 4,
+        "name": "Casareccia Pollo Piccante",
+        "description": "Spicy harissa chicken with tomatoes and baby spinach in a creamy harissa sauce for the right amount of kick.",
+        "price": "15.25",
+        "calories": 1305,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/casareccia_pollo_piccante.jpg",
+        "image": "casareccia_pollo_piccante.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 40,
+    "fields": {
+        "category": 4,
+        "name": "Creste Di Gallo Sausage Ragu",
+        "description": "Our take on a Tuscan-style sausage ragu with fresh egg Creste di Gallo pasta (aka ruffled tubes of goodness) topped with crispy sage, riserva cheese, and tomato crisps",
+        "price": "16.00",
+        "calories": 1134,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/creste_de_gallo.jpg",
+        "image": "creste_de_gallo.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 41,
+    "fields": {
+        "category": 4,
+        "name": "Spaghetti Pomodoro",
+        "description": "A vibrant, velvety number made with tomatoes and buffalo mozzarella.",
+        "price": "10.95",
+        "calories": 530,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/spaghetti_pomodoro.jpg",
+        "image": "spaghetti_pomodoro.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 42,
+    "fields": {
+        "category": 4,
+        "name": "Ravioli Di Capra",
+        "description": "Ravioli parcels filled with goat's cheese and spinach in a pomodoro sauce finished with pesto and pine nuts.",
+        "price": "14.45",
+        "calories": 540,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/raviolii_capra.jpg",
+        "image": "raviolii_capra.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 43,
+    "fields": {
+        "category": 4,
+        "name": "Lentil Ragu",
+        "description": "Lentils, baby sunblush tomatoes, spinach, and linguine. Warm, comforting, and did we mention vegan?",
+        "price": "12.75",
+        "calories": 471,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/lentil_ragu.png",
+        "image": "lentil_ragu.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 44,
+    "fields": {
+        "category": 4,
+        "name": "Spaghetti Bolognese",
+        "description": "Our take on the crowd favourite, with a beef and tomato ragu.",
+        "price": "13.45",
+        "calories": 735,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/spaghetti_bolognese.jpg",
+        "image": "spaghetti_bolognese.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 45,
+    "fields": {
+        "category": 4,
+        "name": "Six Layer Lasagne",
+        "description": "Six layers of pasta, filled with rich beef ragu and béchamel, topped with riserva cheese and breadcrumbs.",
+        "price": "15.45",
+        "calories": 942,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/six_layer+_lasagne.jpg",
+        "image": "six_layer__lasagne.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 46,
+    "fields": {
+        "category": 4,
+        "name": "Vegan Rainbow Lasagne",
+        "description": "Six layers of pasta with a rainbow of fillings: butternut squash, beetroot & red onion, and spinach. Oven-baked in a slow-roasted tomato sauce, topped with pesto and breadcrumbs.",
+        "price": "14.95",
+        "calories": 745,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/vegan_rainbow_lasagne.jpg",
+        "image": "vegan_rainbow_lasagne.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 47,
+    "fields": {
+        "category": 5,
+        "name": "Chicken and Pancetta Risotto",
+        "description": "Rich and creamy risotto with green pesto, peas, onions, leeks, courgette, and spinach. Topped with toasted pine nuts.",
+        "price": "14.95",
+        "calories": 887,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chicken_pancetta_risotto.jpg",
+        "image": "chicken_pancetta_risotto.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 48,
+    "fields": {
+        "category": 5,
+        "name": "All-The-Greens Risotto",
+        "description": "Veggie-packed green pesto, pea, and leek risotto with courgette, onion, spinach, and toasted pine nuts.",
+        "price": "13.00",
+        "calories": 613,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/risotto_all_the_greens.jpg",
+        "image": "risotto_all_the_greens.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 49,
+    "fields": {
+        "category": 7,
+        "name": "Chicken Calabrese",
+        "description": "Oven-roasted chicken with a harissa marinade in roasted pepper, tomato & spicy ‘nduja sauce. Served with cubetti diced potatoes and mascarpone.",
+        "price": "15.95",
+        "calories": 852,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chicken_calabrese.jpg",
+        "image": "chicken_calabrese.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 50,
+    "fields": {
+        "category": 7,
+        "name": "Chicken Milanese",
+        "description": "Breaded chicken breast with pomodoro sauce, rainbow heritage roasted carrots, garlic spinach, and rosemary & sea salt chips.",
+        "price": "16.25",
+        "calories": 1524,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chicken_milanese.jpg",
+        "image": "chicken_milanese.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 51,
+    "fields": {
+        "category": 7,
+        "name": "Herb Rolled Pork Belly",
+        "description": "Herb rolled porchetta pork belly with crispy crackling and a smoky chili jelly served with rainbow heritage carrots, garlic spinach, and cubetti diced potatoes.",
+        "price": "16.75",
+        "calories": 1835,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/herb_rolled_pork_belly.jpg",
+        "image": "herb_rolled_pork_belly.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 52,
+    "fields": {
+        "category": 8,
+        "name": "Mixed Leaf Salad",
+        "description": "The perfect side salad, made with caesar dressing and riserva cheese",
+        "price": "4.15",
+        "calories": 89,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/mixed_leaf_salad.jpg",
+        "image": "mixed_leaf_salad.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 53,
+    "fields": {
+        "category": 8,
+        "name": "Fries",
+        "description": "Crispy thin fries seasoned with rosemary & sea salt.",
+        "price": "4.25",
+        "calories": 729,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fries.jpg",
+        "image": "fries.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 54,
+    "fields": {
+        "category": 8,
+        "name": "Loaded Bolognese Fries",
+        "description": "Our fries with a twist. Topped with bolognese and mozzarella cheese.",
+        "price": "5.25",
+        "calories": 1030,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/loaded_bolognese_fries.jpg",
+        "image": "loaded_bolognese_fries.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 55,
+    "fields": {
+        "category": 8,
+        "name": "Sweet Potato Fries",
+        "description": "With a smoky tomato dip on the side.",
+        "price": "4.25",
+        "calories": 426,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/sweet_potato_fries.jpg",
+        "image": "sweet_potato_fries.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 56,
+    "fields": {
+        "category": 8,
+        "name": "Cubetti Diced Potatoes",
+        "description": "Herby fried cubetti diced potatoes with riserva cheese.",
+        "price": "4.45",
+        "calories": 396,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/cubetti_potatoes.jpg",
+        "image": "cubetti_potatoes.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 57,
+    "fields": {
+        "category": 9,
+        "name": "Golden Caramel Calzone",
+        "description": "A crispy, folded sweet pizza filled with Biscoff caramelised biscuit spread & mascarpone with a scoop of vanilla gelato and salted caramel sauce.",
+        "price": "7.25",
+        "calories": 962,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/golden_caramel_calzone.jpg",
+        "image": "golden_caramel_calzone.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 58,
+    "fields": {
+        "category": 9,
+        "name": "Salted Caramel Chocolate Brownie",
+        "description": "Warm brownie injected with rich salted caramel, topped with hot chocolate sauce and vanilla ice cream.",
+        "price": "6.95",
+        "calories": 818,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/salted_caramel_chocolate_brownie.jpg",
+        "image": "salted_caramel_chocolate_brownie.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 59,
+    "fields": {
+        "category": 9,
+        "name": "Caramelised Banana & Salted Caramel Waffle",
+        "description": "Waffles topped with salted caramel sauce and fresh banana, then oven-baked. Topped with vanilla ice cream and honeycomb pieces. Yum.",
+        "price": "7.50",
+        "calories": 774,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/caramelised_banana_salted_caramel_waffle.jpg",
+        "image": "caramelised_banana_salted_caramel_waffle.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 60,
+    "fields": {
+        "category": 9,
+        "name": "Passion Fruit Cheesecake",
+        "description": "With passion fruit sauce.",
+        "price": "6.95",
+        "calories": 412,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/passion_fruit_cheesecake.jpg",
+        "image": "passion_fruit_cheesecake.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 61,
+    "fields": {
+        "category": 9,
+        "name": "Tiramisu",
+        "description": "Espresso-soaked sponge, layered with mascarpone.",
+        "price": "6.95",
+        "calories": 361,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/tiramisu.png",
+        "image": "tiramisu.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 62,
+    "fields": {
+        "category": 9,
+        "name": "Chocolate Melt",
+        "description": "Warm chocolate pudding with a melted center served with vanilla ice cream.",
+        "price": "6.25",
+        "calories": 552,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/chocolate_melt.jpg",
+        "image": "chocolate_melt.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 63,
+    "fields": {
+        "category": 9,
+        "name": "Limoncello Tart",
+        "description": "Zesty lemon tart with mini meringues and strawberry sorbet.",
+        "price": "7.25",
+        "calories": 344,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/limoncello_tart.jpg",
+        "image": "limoncello_tart.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 64,
+    "fields": {
+        "category": 9,
+        "name": "Fudge Cake",
+        "description": "Salted caramel sponge stacked between warm chocolate fudge cake, topped with honeycomb pieces. It's a winner - and vegan too.",
+        "price": "6.95",
+        "calories": 667,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fudge_cake.jpg",
+        "image": "fudge_cake.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 65,
+    "fields": {
+        "category": 9,
+        "name": "Sticky Toffee Cheesecake",
+        "description": "Topped with chunks of toffee cake and toffee sauce. Need we say more?",
+        "price": "6.95",
+        "calories": 585,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/sticky_toffee_cheesecake.jpg",
+        "image": "sticky_toffee_cheesecake.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 66,
+    "fields": {
+        "category": 9,
+        "name": "Choc-Banana Brownie Sundae",
+        "description": "Chocolate and salted caramel ice cream with a chocolate banana brownie topped with mascarpone cream and fresh banana.",
+        "price": "6.95",
+        "calories": 775,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/choc_banana_brownie_sundae.jpg",
+        "image": "choc_banana_brownie_sundae.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 67,
+    "fields": {
+        "category": 9,
+        "name": "Very Berry Sundae",
+        "description": "A refreshing mix of strawberry sorbet, and lemon sorbet topped with whipped mascarpone cream, mini meringues, raspberry sauce, and a raspberry snap.",
+        "price": "7.50",
+        "calories": 374,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/very_berry_sundae.png",
+        "image": "very_berry_sundae.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 68,
+    "fields": {
+        "category": 10,
+        "name": "Apple Juice",
+        "description": "-",
+        "price": "2.45",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/apple_juice.jpg",
+        "image": "apple_juice.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 69,
+    "fields": {
+        "category": 10,
+        "name": "Appletiser",
+        "description": "-",
+        "price": "2.45",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/appletizer.jpg",
+        "image": "appletizer.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 70,
+    "fields": {
+        "category": 10,
+        "name": "Coke",
+        "description": "-",
+        "price": "1.95",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/coke.jpg",
+        "image": "coke.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 71,
+    "fields": {
+        "category": 10,
+        "name": "Coke Zero",
+        "description": "-",
+        "price": "1.95",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/coke_zero.jpg",
+        "image": "coke_zero.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 72,
+    "fields": {
+        "category": 10,
+        "name": "Diet coke",
+        "description": "-",
+        "price": "1.95",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/diet_coke.jpg",
+        "image": "diet_coke.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 73,
+    "fields": {
+        "category": 10,
+        "name": "Bleu Still Water",
+        "description": "-",
+        "price": "1.75",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/belu.jpg",
+        "image": "belu.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 74,
+    "fields": {
+        "category": 10,
+        "name": "Belu Sparkling Water",
+        "description": "-",
+        "price": "1.75",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/belu_sparkling.jpg",
+        "image": "belu_sparkling.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 75,
+    "fields": {
+        "category": 10,
+        "name": "Fanta",
+        "description": "-",
+        "price": "1.95",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fanta.webp",
+        "image": "fanta.webp"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 76,
+    "fields": {
+        "category": 10,
+        "name": "Sprite",
+        "description": "-",
+        "price": "1.95",
+        "calories": null,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/sprite.png",
+        "image": "sprite.png"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 84,
+    "fields": {
+        "category": 1,
+        "name": "Nduja Bruschetta",
+        "description": "Toasted Italian bread, topped with spicy 'nduja, cooling mascarpone, and melted scamorza cheese. Finished with parsley & roasted red chili.",
+        "price": "7.23",
+        "calories": 596,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/nduja_bruschetta.jpg",
+        "image": "nduja_bruschetta_xDd5yZU.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 88,
+    "fields": {
+        "category": 1,
+        "name": "Garlic Bread",
+        "description": "Brushed with garlic and rosemary. Always a hit.",
+        "price": "5.95",
+        "calories": 635,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/garlic_bread.jpg",
+        "image": "garlic_bread_AzEqFSF.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 89,
+    "fields": {
+        "category": 1,
+        "name": "Garlic Bread with Mozzarella",
+        "description": "With caramelised balsamic onions.",
+        "price": "6.95",
+        "calories": 800,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/garlic_bread_with_mozzarella.jpg",
+        "image": "garlic_bread_with_mozzarella_9zl2ARF.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 90,
+    "fields": {
+        "category": 1,
+        "name": "Vegan Meatless 'Meatballs'",
+        "description": "Plant based meatless 'meatballs' in a slow-roasted tomato sauce with vegan MozzaRisella.",
+        "price": "7.75",
+        "calories": 318,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/vegan_meatballs.jpg",
+        "image": "vegan_meatballs_COhJ5q0.jpg"
+    }
+},
+{
+    "model": "food_products.foodproduct",
+    "pk": 91,
+    "fields": {
+        "category": 1,
+        "name": "Cheesy Chilli Garlic Bread",
+        "description": "A cheesy hit, with added kick. Mozzarella, garlic and chilli.",
+        "price": "6.95",
+        "calories": 801,
+        "image_url": "https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/cheesy_chilli_garlic_bread.jpg",
+        "image": "cheesy_chilli_garlic_bread_7GHmlsz.jpg"
+    }
+}
+]
