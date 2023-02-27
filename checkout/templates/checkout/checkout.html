@@ -3,7 +3,7 @@
 {% load bag_tools %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/stripe.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -123,13 +123,13 @@
         </form>
     </div>
 </div>
-<!-- <div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
+<div id="loading-overlay">
+    <h1 class="text-light loading-spinner">
         <span class="icon">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
         </span>
     </h1>
-</div> -->
+</div>
 {% endblock %}
 
 {% block postloadjs %}
