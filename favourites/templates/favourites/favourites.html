@@ -47,7 +47,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{favourite.product.price}}</strong>
-                                    <strong class="card-text">{{favourite.product.calories}}kcal</strong>
+                                    {% if product.calories %}
+                                    <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <form class="form" action="{% url 'add_to_bag' favourite.product_id %}" method="POST">
                                     {% csrf_token %}

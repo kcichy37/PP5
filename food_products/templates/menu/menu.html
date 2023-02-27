@@ -93,7 +93,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -193,7 +195,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -293,7 +297,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -393,7 +399,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -494,7 +502,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -595,7 +605,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -696,7 +708,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}
@@ -797,7 +811,9 @@
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <strong class="card-text">£{{product.price}}</strong>
+                                        {% if product.calories %}
                                         <strong class="card-text">{{product.calories}}kcal</strong>
+                                        {% endif %}
                                     </div>
                                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                         {% csrf_token %}

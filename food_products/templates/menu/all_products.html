@@ -91,7 +91,9 @@
                                         </p>
                                         <div class="d-flex justify-content-between">
                                             <strong class="card-text">£{{product.price}}</strong>
+                                            {% if product.calories %}
                                             <strong class="card-text">{{product.calories}}kcal</strong>
+                                            {% endif %}
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -173,7 +175,9 @@
                                         </p>
                                         <div class="d-flex justify-content-between">
                                             <strong class="card-text">£{{product.price}}</strong>
+                                            {% if product.calories %}
                                             <strong class="card-text">{{product.calories}}kcal</strong>
+                                            {% endif %}
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -255,7 +259,9 @@
                                         </p>
                                         <div class="d-flex justify-content-between mb-2">
                                             <strong class="card-text">£{{product.price}}</strong>
+                                            {% if product.calories %}
                                             <strong class="card-text">{{product.calories}}kcal</strong>
+                                            {% endif %}
                                         </div>
                                         <div class="d-flex justify-content-evenly align-items-end">
                                             <a class="text-info" href="{% url 'edit_product' product.id %}"
@@ -338,7 +344,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -415,7 +423,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -492,7 +502,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -569,7 +581,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -646,7 +660,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
@@ -713,7 +729,9 @@
                                 <h6 class="card-title">{{product.name}}</h6>
                                 <div class="d-flex justify-content-between">
                                     <strong class="card-text">£{{product.price}}</strong>
+                                    {% if product.calories %}
                                     <strong class="card-text">{{product.calories}}kcal</strong>
+                                    {% endif %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a>
