@@ -89,42 +89,42 @@ root {
 }
 
 .salads-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/salad_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/salad_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .pizza-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pizza_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pizza_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .pasta-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/pasta_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pasta_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .risotto-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/risotto_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/risotto_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .meat-fish-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/meat_fish_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/meat_fish_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .sides-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/fries_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/fries_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
 .desserts-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/desserts_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/desserts_bg.jpg) no-repeat center;
     background-size: 70% 150%;
 }
 
 .soft-drinks-bg {
-    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/pp5+menu/soft_drinks_bg.jpg) no-repeat center;
+    background: url(https://taste-of-italy.s3.eu-west-2.amazonaws.com/media/soft_drinks_bg.jpg) no-repeat center;
     background-size: 70% 230%;
 }
 
