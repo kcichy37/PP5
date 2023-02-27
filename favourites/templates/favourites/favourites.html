@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!-- Heading -->
 <section class="h-100 pt-0">
     <div class="container mb-5 text-center">
         <div class="row">
@@ -12,6 +13,7 @@
             </div>
         </div>
 
+        <!-- Favourites list -->
         <div class="row">
             {% if favourites %}
             {% for favourite in favourites %}

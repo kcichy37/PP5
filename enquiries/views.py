@@ -7,6 +7,9 @@ from django.contrib import messages
 
 
 def enquiry(request):
+    """
+    Handles enquiry form view
+    """
     email = settings.DEFAULT_FROM_EMAIL
 
     if request.method == 'POST':

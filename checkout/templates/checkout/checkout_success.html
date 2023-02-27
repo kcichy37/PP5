@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
-
 {% block content %}
+<!-- Heading -->
 <div class="container mb-5 text-center">
     <div class="row">
         <div class="col">
@@ -19,7 +16,7 @@
     </div>
 
 
-
+    <!-- Order information -->
     <div class="row text-start d-flex justify-content-center">
         <div class="col-12 col-lg-7">
             <div class="order-confirmation-wrapper p-2 border">

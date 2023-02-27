@@ -4,6 +4,9 @@ from django.db import models
 
 
 class Enquiry(models.Model):
+    """
+    Model for enquiries
+    """
     full_name = models.CharField(max_length=254, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     subject = models.CharField(max_length=100, null=False, blank=False)
@@ -17,7 +20,7 @@ class Enquiry(models.Model):
         Ordering of enquiries
         in admin panel
         """
-
+        verbose_name_plural = 'Enquiries'
         ordering = ["-created_on"]
 
     def __str__(self):
