@@ -36,4 +36,5 @@ class EnquiryForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
             self.fields[field].label = False
-            self.fields["image"].label = "Image - if enquiry relates to the order."
+            self.fields["image"].label = ("Image - if enquiry \
+                                        relates to the order.")

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import FoodProduct, FoodCategory
+from .models import FoodProduct
 from .forms import ProductForm
 
 
@@ -48,9 +48,10 @@ def add_product(request):
             messages.success(request, "Successfully added product!")
             return redirect(reverse("all_products"))
         else:
-            messages.error(
-                request, "Failed to add product. Please ensure the form is valid"
-            )
+            messages.error(request,
+                           "Failed to add product. \
+                           Please ensure the form is valid"
+                           )
     else:
         form = ProductForm()
 
@@ -79,10 +80,10 @@ def edit_product(request, product_id):
             messages.success(request, f"Successfully edited {product.name}")
             return redirect(reverse("all_products"))
         else:
-            messages.error(
-                request,
-                f"Failed to update {product.name}. Please ensure the form is valid",
-            )
+            messages.error(request,
+                           f"Failed to update {product.name}. \
+                            Please ensure the form is valid"
+                           )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f"You are editing {product.name}")

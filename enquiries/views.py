@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import EnquiryForm
-from .models import Enquiry
 from django.contrib import messages
 
 
@@ -19,7 +18,8 @@ def enquiry(request):
             messages.success(request, "Enquiry sent")
             send_mail(
                 f"{enquiry.subject}",
-                f"Name:{enquiry.full_name}\n\n{enquiry.description}\n\nCreated on:{enquiry.created_on}",
+                f"Name:{enquiry.full_name}\n\n{enquiry.description}\n\n \
+                    Created on:{enquiry.created_on}",
                 enquiry.email,
                 [email],
                 fail_silently=False,

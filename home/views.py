@@ -1,5 +1,4 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
-from django.http import HttpResponseForbidden
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Reviews
@@ -34,9 +33,10 @@ def add_reviews(request):
             messages.success(request, "Successfully added a review!")
             return redirect(reverse("add_reviews"))
         else:
-            messages.error(
-                request, "Failed to add product. Please ensure the form is valid"
-            )
+            messages.error(request,
+                           "Failed to add product. \
+                           Please ensure the form is valid"
+                           )
     else:
         form = ReviewForm(user=request.user)
 
@@ -63,6 +63,8 @@ def delete_review(request, reviews_id):
         reviews.delete()
         messages.success(request, "The review has been deleted")
     else:
-        messages.error(request, "You do not have permission to remove this review.")
+        messages.error(request,
+                       "You do not have permission to remove this review."
+                       )
 
     return redirect(reverse("add_reviews"))

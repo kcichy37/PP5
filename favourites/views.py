@@ -27,11 +27,12 @@ def add_to_favourites(request, product_id):
         user=request.user, product=product
     )
     if created:
-        messages.success(request, f"{product.name} has been added to your favourites.")
+        messages.success(
+            request, f"{product.name} has been added to your favourites.")
     else:
-        messages.error(request, f"{product.name} is already in your favourites.")
+        messages.error(
+            request, f"{product.name} is already in your favourites.")
 
-    context = {"product": product, "favourite": favourite}
     return redirect(reverse("menu"))
 
 
@@ -43,13 +44,14 @@ def delete_favourites(request, favourite_id):
     favourite = get_object_or_404(Favourite, pk=favourite_id)
     if request.user == favourite.user:
         favourite.delete()
-        messages.success(
-            request, f"{favourite.product.name} has been removed from your favourites."
-        )
+        messages.success(request,
+                         f"{favourite.product.name} has been \
+                            removed from your favourites."
+                         )
     else:
-        messages.error(
-            request,
-            "You do not have permission to remove this product from your favourites.",
-        )
+        messages.error(request,
+                       "You do not have permission to remove \
+                        this product from your favourites.",
+                       )
 
     return redirect(reverse("my_favourites"))
