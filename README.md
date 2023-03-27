@@ -17,4 +17,29 @@ The purpose of this project was to build a Full-Stack site based on business log
 - Another tool that I used was the Milestones that can be set in github, by creating the milestones I was able to group certain user stories together that worked along each other and allowed me to focus on particular side of the design 
 ![Milestones](readme_media/sprints.PNG)
 
+## User stories and their features
+(User stories can be accessed by clicking user stories id number)
 
+-As a site user I would like to easily register for an account to have a personal account #1
+-As a site user I would like to easily log in and log out so I can view my personal information #2
+-As a site user I would like to easily reset my password in case I forget it to recover access to my account #3
+-As a site user I would like to receive an email confirmation to verify my account#4
+-As a site user I would like my account to be secure so no one else has access to it #5
+-As a shopper I would like to be able to view the products the business has to offer for purchase #6
+-As a shopper I would like to able to see the details of individual products#7
+-As a shopper I would like to easily view the items I am purchasing and the total amount I’m spending #8
+-As a shopper I can sort the products by categories so I can sort through what I want#9
+-As a shopper I would like to be able to increase quantity of my chosen products#10
+-As a shopper I would like to be able to delete products I don’t want anymore #11
+-As a shopper I would like to have my transaction go through securely no matter of what happens #12
+-As a shopper I would like to receive email confirming my purchase, so I know my order is processed.#13
+-As an owner I would like to be able to view the orders so that they can be processed #14
+-As a site user I would like my account to be secure so no one else has access to it.#15
+-As a site user I would like to be able to save my details, so I don’t have to re-enter them if I order again.#16
+-As a site user I want the site to show if my interactions were successful or failed so I know if its all working.#17
+-As a user I would like to be able to add products to my favourites for quick access to my favourite products#18
+-As a user I would like to be able to add favourite products straight to the bag from the page so I dont have to browse.#19
+-As a user I would like to be able to delete my favourites if I dont like them anymore #20
+-As a user I would like to be able to leave a review #21
+-As a user I would like to be able to delete my reviews #23
+-As an admin I would like to be able to control users reviews incase they are inappropriate#24
