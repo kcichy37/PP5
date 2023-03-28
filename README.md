@@ -131,5 +131,9 @@ The purpose of this project was to build a Full-Stack site based on business log
 - Balsamiq 
 - Bootstrap 5 
 
+## Code Validation
 
+### HTML Validation
+- Home app + base template - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2F)
+- 
 
