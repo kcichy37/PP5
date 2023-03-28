@@ -57,7 +57,7 @@
                                         <div class="input-group input-group-sm" style="max-width: 100px;">
                                             <button class="btn btn-primary decrement-qty"
                                                 data-item_id="{{ favourite.product_id }}"
-                                                id="decrement-qty_{{ favourite.product_id }}">
+                                                id="decrement-qty_{{ favourite.product_id }}" aria-label="Decrement quantity">
                                                 <i class="fas fa-minus fa-sm"></i>
                                             </button>
                                             <input type="number" class="form-control text-center qty_input" value="1"
@@ -65,7 +65,7 @@
                                                 id="id_qty_{{ favourite.product_id }}" name="quantity">
                                             <button class="btn btn-primary increment-qty"
                                                 data-item_id="{{ favourite.product_id }}"
-                                                id="increment-qty_{{ favourite.product_id }}">
+                                                id="increment-qty_{{ favourite.product_id }}" aria-label="Increment quantity">
                                                 <i class="fas fa-plus fa-sm"></i>
                                             </button>
                                         </div>

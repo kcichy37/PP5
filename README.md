@@ -136,14 +136,87 @@ The purpose of this project was to build a Full-Stack site based on business log
 ### HTML Validation
 - Home app + base template - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2F)
 - Menu app - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fmenu%2F)
+- Product Management - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fmenu%2Fall_products%2F#l180c65)
+- Add Product - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fmenu%2Fadd%2F#l180c65)
+- My profile - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fprofile%2F#l180c65)
+- Favourites - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Ffavourites%2F#l180c65)
+- Reviews - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fadd_reviews%2F#l180c65)
+- Bag - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fbag%2F#l180c65)
+- Checkout - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fcheckout%2F#l180c65)
+- Order confirmation - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fcheckout%2Fcheckout_success%2FBF5B974E2ACF423A88D11DADBA6BB47D#l180c65)
+
 
 ### CSS Validation 
 - The CSS code validator shows no errors, however, there's a lot of errors due to the templates css code that uses vendor extensions for Apple.
 ![No errors](readme_media/cssvalid.PNG)
 
+### Python 
+- I used Black as an add-on that formats my python code.
+- Also used flake8 to correct every error that Python has thrown.
+
 ## Tests
 
 ### Manual test
 - I have tested this site for responsiveness by opening the webpage on different devices such as my desktop and my phone, as well as using the built-in dev tools.
-- I have ensured to go over every form checking every field that required input to be put in, that the forms send and direct to the right page after, as well as, checked the CRUD functionality for users and admin on pages like the menu, reviews, and favourites. 
+- I have ensured to go over every form checking every field that required input to be put in, that the forms send and direct to the right page after, as well as, checked the CRUD functionality for users and admin on pages like the menu, reviews, and favourites.
+
+### Lighthouse
+![Lighthouse Results](readme_media/homepagelight.PNG "Lighthouse results")
+- The performance came out poor due to the images being loaded on the page as well as the best practices due to wron aspect retio.
+
+## Deployment
+
+### Deployment to GitHub 
+- Site is deployed on Gitpod by: - Download the Gitpod extension for your browser so the code opens in the browser. - Going to the site's dedicated repository. - Above the commits, there's a green button with 'Gitpod' - By clicking that, Gitpod will open its code creator site - In Gitpod we go to the terminal and type in 'python3 -m HTTP.server' - A pop-up will open, press preview and the website will deploy.
+
+### Deployment to Heroku
+- In your app
+    - Add the list of requirements with "pip3 freeze --local > requirements.txt" in the console
+    - Git add and git commit the changes made
+
+- Log into heroku
+    - Log into Heroku
+    -  top right-hand corner click "New" 
+    - Write app name
+    - Choose Region
+    - Click "Create App"
+
+- The page of your project opens.
+    - Go to Resources Tab, Add-ons, search and add Heroku Postgres
+    - Choose "settings" from the menu on the top of the page
+    - Go to section "Config Vars" and click button "Reveal Config Vars".
+    - Add the below variables to the list
+        Database URL will be added automatically 
+        Secret_key - can be any key, best practice to generate one.
+
+- Go back to your code
+    - Procfile needs to be created in your app
+        web: gunicorn PROJ_NAME.wsgi
+
+    In settings in your app add Heroku to ALLOWED_HOSTS
+
+    Add and commit the changes in your code and push to github
+
+Final step - deployment
+
+    Next go to "Deploy" in the menu bar on the top
+
+    Go to section "deployment method", choose "GitHub"
+
+    New section will appear "Connect to GitHub" - Search for the repository to connect to
+
+    type the name of your repository and click "search"
+
+    once Heroku finds your repository - click "connect"
+
+    Scroll down to the section "Automatic Deploys"
+
+    Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+
+    Click "Deploy branch"
+
+Once the program runs: you should see the message "the app was sussesfully deployed"
+
+    Click the button "View"
+
 
