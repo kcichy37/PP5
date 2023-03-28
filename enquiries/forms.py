@@ -24,6 +24,7 @@ class EnquiryForm(forms.ModelForm):
             "email": "Email Address",
             "subject": "Subject",
             "description": "Description of your enquiry",
+            "image": "Image if necessary",
         }
 
         self.fields["full_name"].widget.attrs["autofocus"] = True
@@ -35,3 +36,5 @@ class EnquiryForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
             self.fields[field].label = False
+            self.fields["image"].label = ("Image - if enquiry \
+                                        relates to the order.")

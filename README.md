@@ -137,8 +137,13 @@ The purpose of this project was to build a Full-Stack site based on business log
 - Home app + base template - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2F)
 - Menu app - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2Fmenu%2F)
 
-
 ### CSS Validation 
 - The CSS code validator shows no errors, however, there's a lot of errors due to the templates css code that uses vendor extensions for Apple.
 ![No errors](readme_media/cssvalid.PNG)
+
+## Tests
+
+### Manual test
+- I have tested this site for responsiveness by opening the webpage on different devices such as my desktop and my phone, as well as using the built-in dev tools.
+- I have ensured to go over every form checking every field that required input to be put in, that the forms send and direct to the right page after, as well as, checked the CRUD functionality for users and admin on pages like the menu, reviews, and favourites. 
 
