@@ -90,3 +90,11 @@ The purpose of this project was to build a Full-Stack site based on business log
         - Superusers can also add a new product on the "add product" tab in my account. 
         ![Add product](readme_media/addproduct.PNG "Add product")
 
+
+## Future features
+    
+- The main future feature the website needs is a Google maps API that will pinpoint a user location once entered and could calculate delivery cost depending on what they order and the distance to the location
+
+- Takeaway menu page refreshes everytime an item is selected which could be inconvinient for users when trying to pick items, future implemntations will need JavaScript to block the refresh and remain were the user is on the page while the items get added to page.
+
+
