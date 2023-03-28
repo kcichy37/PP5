@@ -192,31 +192,19 @@ The purpose of this project was to build a Full-Stack site based on business log
 - Go back to your code
     - Procfile needs to be created in your app
         web: gunicorn PROJ_NAME.wsgi
+    - In settings in your app add Heroku to ALLOWED_HOSTS
+    - Add and commit the changes in your code and push to github
 
-    In settings in your app add Heroku to ALLOWED_HOSTS
+- Final step - deployment
+    - Next go to "Deploy" in the menu bar on the top
+    - Go to section "deployment method", choose "GitHub"
+    - New section will appear "Connect to GitHub" - Search for the repository to connect to
+    - Type the name of your repository and click "search"
+    - Once Heroku finds your repository - click "connect"
+    - Scroll down to the section "Automatic Deploys"
+    - Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+    - Click "Deploy branch"
 
-    Add and commit the changes in your code and push to github
-
-Final step - deployment
-
-    Next go to "Deploy" in the menu bar on the top
-
-    Go to section "deployment method", choose "GitHub"
-
-    New section will appear "Connect to GitHub" - Search for the repository to connect to
-
-    type the name of your repository and click "search"
-
-    once Heroku finds your repository - click "connect"
-
-    Scroll down to the section "Automatic Deploys"
-
-    Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
-
-    Click "Deploy branch"
-
-Once the program runs: you should see the message "the app was sussesfully deployed"
-
-    Click the button "View"
-
+### AWS 
+- For creating the static file and media file bucket I have followed the [Code Institute tutorial](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf)
 
