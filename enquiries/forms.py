@@ -24,7 +24,6 @@ class EnquiryForm(forms.ModelForm):
             "email": "Email Address",
             "subject": "Subject",
             "description": "Description of your enquiry",
-            "image": "Image if necessary",
         }
 
         self.fields["full_name"].widget.attrs["autofocus"] = True
