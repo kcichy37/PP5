@@ -135,5 +135,9 @@ The purpose of this project was to build a Full-Stack site based on business log
 
 ### HTML Validation
 - Home app + base template - [No errors](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Ftaste-of-italy.herokuapp.com%2F)
-- 
+
+
+### CSS Validation 
+- The CSS code validator shows no errors, however, there's a lot of errors due to the templates css code that uses vendor extensions for Apple.
+![No errors](readme_media/cssvalid.PNG)
 

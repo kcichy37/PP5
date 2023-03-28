@@ -4012,14 +4012,6 @@ fieldset:disabled .btn {
     border-color: #ffc800;
 }
 
-*/ .btn-check:checked+.btn-outline-warning:focus,
-.btn-check:active+.btn-outline-warning:focus,
-.btn-outline-warning:active:focus,
-.btn-outline-warning.active:focus,
-.btn-outline-warning.dropdown-toggle.show:focus {
-    box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.5);
-}
-
 .btn-outline-warning:disabled,
 .btn-outline-warning.disabled {
     color: #ffc800;
