@@ -31,7 +31,7 @@ The purpose of this project was to build a Full-Stack site based on business log
     - As a shopper, I would like to have my transaction go through securely no matter what happens [#12](https://github.com/kcichy37/fifth_portfolio_project/issues/12)
     - As a shopper, I would like to receive an email confirming my purchase, so I know my order is processed [#13](https://github.com/kcichy37/fifth_portfolio_project/issues/13)
 
-- Registered ser
+- Registered user
     - As a registered site user I would like to easily log in and log out so I can view my personal information [#2](https://github.com/kcichy37/fifth_portfolio_project/issues/2)
     - As a registered site user I would like to easily reset my password in case I forget it to recover access to my account [#3](https://github.com/kcichy37/fifth_portfolio_project/issues/3)
     - As a registered site user I would like to receive an email confirmation to verify my account [#4](https://github.com/kcichy37/fifth_portfolio_project/issues/4)
@@ -93,8 +93,43 @@ The purpose of this project was to build a Full-Stack site based on business log
 
 ## Future features
     
-- The main future feature the website needs is a Google maps API that will pinpoint a user location once entered and could calculate delivery cost depending on what they order and the distance to the location
+- The main future feature the website needs is a Google maps API that will pinpoint a user location once entered and could calculate delivery cost depending on what they order and the distance to the location.
 
 - Takeaway menu page refreshes everytime an item is selected which could be inconvinient for users when trying to pick items, future implemntations will need JavaScript to block the refresh and remain were the user is on the page while the items get added to page.
+
+- Update items if they are out of stock, admin can temporarly disable purchasing the item.
+
+## Web marketing
+
+- For web marketing I have used two methods:
+    - First method was creating a Facebook page for the company for marketing purposes, this enables the company to post adverts, intresting content and special offers as well as users can engage with the company.  
+    
+    - Another method used was Newsletter by Mailchimp where customers subscribe for newsletters for any new information, deals, discounts and events.
+
+## Technologies Used
+
+### Code
+    
+- HTML5
+- CSS3 
+- JavaScript
+- JQuery 
+- Python
+- Django 
+
+### Programs
+
+- GitHub - Used to create the repository as well as for version control and user stories.
+- Heroku - Used to deploy the final website.
+- ElephantSQL - Used to store the database.
+- Stripe - Used to process the payments.
+- AWS S3 - Used for bucket storage for static files and media files.
+
+### Frameworks 
+
+- Django 
+- Balsamiq 
+- Bootstrap 5 
+
 
 
