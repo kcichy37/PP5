@@ -48,3 +48,35 @@ The purpose of this project was to build a Full-Stack site based on business log
 - Admin
     - As an admin I would like to be able to view the orders so that they can be processed [#14](https://github.com/kcichy37/fifth_portfolio_project/issues/14)
     - As an admin I would like to be able to control users reviews incase they are inappropriate [#24](https://github.com/kcichy37/fifth_portfolio_project/issues/24)
+
+
+## Additional features 
+
+- Home page
+    - Home page consists of a nav bar which includes the companies logo as well as 3 navigation buttons, a dropdown button which is a 'My Account' dropdown with login or register options. after login in the options become tabs for users, Admin user have extra tabs such as Product management and adding a product and finally a bag button with the total.
+    - Home page consists of 4 sections, first the greeting section with a background and short description of Taste of Italy as well as the opening hours. Second the about us section which gives a background to the company. Third is the brief takeaway menu description with a button that navigates to the menu. Last section is the Testimonial section were registered user can leave a review, the reviews are in a carousel that switches between all reviews.
+    ![Section 1](readme_media/section1.PNG "First Section")
+    ![Section 2](readme_media/section2.PNG "Second Section")
+    ![Section 3](readme_media/section3.PNG "Third Section")
+    ![Section 4](readme_media/section4.PNG "Fourth Section")
+
+- Takeaway page
+    - The takeaway page is divide into 9 categories that represent the food eg. starters or pizza. For quick navigation theres a navbar at the top which jumps to the category selected by user.
+    ![Takeaway page](readme_media/takeaway.PNG "Takeaway page")
+    - Products on the takeway page are shown in a card with all details such us description - if description is too long then it will hide and show 'read more' - in addition the price and calories. With these you also get the option to choose your quantity and then Add button that adds to the bag, updating the bag total on the nav bar.
+    [Updated Bag](readme_media/bagupdate.PNG)
+
+- Bag page
+    - After adding products from the takeaway page, they show up on the bag page where user can still update the quantity of product they want or delete products they dont want anymore.
+    - Theres 2 buttons, to go back to the menu page in case user wants to add more products, and a checkout button navigating to checkout. 
+    ![Bag page](readme_media/bag.PNG "Bag page")
+
+- Checkout page
+    - After user confirms his order in the bag, they will be presented with a checkout page, where theres two section, one to input delivery and payment details and second one recaps users order. 
+    ![Checkout page](readme_media/checkout.PNG "Checkout page")
+    - If user is satisfied with his order and input correct details, the page will process his payment via Stripe. After successful payment the site shows a order summery page confirming the order.
+    ![Order confirmation](readme_media/orderconfirmation.PNG "Order confirmation")
+
+- Footer
+    - Footer contains a brief repeat of main information such as opening hours, about the company,social media links, and contact us, as well as a newsletter sign up.
+    ![Footer](readme_media/footer.PNG "Footer")
